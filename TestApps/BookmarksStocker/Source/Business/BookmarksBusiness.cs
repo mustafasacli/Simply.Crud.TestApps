@@ -223,8 +223,9 @@ namespace BookmarksStocker.Source.Business
                 {
                     try
                     {
-                        context.OpenIfNot();
-                        response.ResponseCode = context.DeleteByIdList<Bookmarks>(idValues: new object[] { id });
+                        //context.OpenIfNot();
+                        response.ResponseCode = context.OpenAnd()
+                            .DeleteByIdList<Bookmarks>(idValues: new object[] { id });
                         // context.CloseIfNot();
                     }
                     finally
