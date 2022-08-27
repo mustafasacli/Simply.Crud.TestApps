@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SI.Test.Entities</name>
+    </assembly>
+    <members>
+        <member name="T:SI.Test.Entities.LogEntry">
+            <summary>
+            Defines the <see cref="T:SI.Test.Entities.LogEntry"/>.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.UserId">
+            <summary>
+            Gets or sets the UserId.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.LogTime">
+            <summary>
+            Gets or sets the LogTime.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.Title">
+            <summary>
+            Gets or sets the Title.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.ErrorCode">
+            <summary>
+            Gets or sets the ErrorCode.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.Message">
+            <summary>
+            Gets or sets the Message.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.StackTrace">
+            <summary>
+            Gets or sets the StackTrace.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.LogEntry.User">
+            <summary>
+            Gets or sets the User.
+            </summary>
+        </member>
+        <member name="T:SI.Test.Entities.PersonalFile">
+            <summary>
+            Defines the <see cref="T:SI.Test.Entities.PersonalFile"/>.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.FileName">
+            <summary>
+            Gets or sets the FileName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.FileContent">
+            <summary>
+            Gets or sets the FileContent.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.CreatedBy">
+            <summary>
+            Gets or sets the CreatedBy.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.CreationDate">
+            <summary>
+            Gets or sets the CreationDate.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.IsActive">
+            <summary>
+            Gets or sets the IsActive.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.PersonalFile.User">
+            <summary>
+            Gets or sets the User.
+            </summary>
+        </member>
+        <member name="T:SI.Test.Entities.TransactionLog">
+            <summary>
+            Defines the <see cref="T:SI.Test.Entities.TransactionLog"/>.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.UserId">
+            <summary>
+            Gets or sets the UserId.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.LogTime">
+            <summary>
+            Gets or sets the LogTime.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.TableName">
+            <summary>
+            Gets or sets the TableName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.EntityId">
+            <summary>
+            Gets or sets the EntityId.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.TransactionType">
+            <summary>
+            Gets or sets the TransactionType.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.TransactionLog.User">
+            <summary>
+            Gets or sets the User.
+            </summary>
+        </member>
+        <member name="T:SI.Test.Entities.User">
+            <summary>
+            Defines the <see cref="T:SI.Test.Entities.User"/>.
+            </summary>
+        </member>
+        <member name="M:SI.Test.Entities.User.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SI.Test.Entities.User"/> class.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.FirstName">
+            <summary>
+            Gets or sets the FirstName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.LastName">
+            <summary>
+            Gets or sets the LastName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.UserName">
+            <summary>
+            Gets or sets the UserName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.Pass">
+            <summary>
+            Gets or sets the Pass.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.UserType">
+            <summary>
+            Gets or sets the UserType.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.CreationDate">
+            <summary>
+            Gets or sets the CreationDate.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.IsActive">
+            <summary>
+            Gets or sets a value indicating whether IsActive.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.IsDeleted">
+            <summary>
+            Gets or sets the ıs deleted.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.UpdateTime">
+            <summary>
+            Gets or sets the update time.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.LogEntries">
+            <summary>
+            Gets or sets the LogEntries.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.PersonalFiles">
+            <summary>
+            Gets or sets the PersonalFiles.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.TransactionLogs">
+            <summary>
+            Gets or sets the TransactionLogs.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.User.UserType1">
+            <summary>
+            Gets or sets the UserType1.
+            </summary>
+        </member>
+        <member name="T:SI.Test.Entities.UserType">
+            <summary>
+            Defines the <see cref="T:SI.Test.Entities.UserType"/>.
+            </summary>
+        </member>
+        <member name="M:SI.Test.Entities.UserType.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SI.Test.Entities.UserType"/> class.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.UserType.Id">
+            <summary>
+            Gets or sets the Id.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.UserType.TypeName">
+            <summary>
+            Gets or sets the TypeName.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.UserType.IsActive">
+            <summary>
+            Gets or sets a value indicating whether IsActive.
+            </summary>
+        </member>
+        <member name="P:SI.Test.Entities.UserType.Users">
+            <summary>
+            Gets or sets the Users.
+            </summary>
+        </member>
+    </members>
+</doc>

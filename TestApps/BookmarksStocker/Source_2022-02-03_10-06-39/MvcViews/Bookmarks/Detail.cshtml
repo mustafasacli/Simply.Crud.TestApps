@@ -1,0 +1,52 @@
+@model Bookmarks.Project.ViewModel.BookmarksViewModel
+
+@{
+}
+
+<h2>Kayýt Detay</h2>
+
+<div>
+    <h4>Kayýt detaylarý</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @(Model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @(Model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+        <dd>
+            @(Model.Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationTime)
+        </dt>
+        <dd>
+            @(Model.CreationTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateTime)
+        </dt>
+        <dd>
+            @(Model.UpdateTime)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Sil", "Delete", new { id = Model.Id }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

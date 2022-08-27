@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dexter.configuration>
+  <dexter-settings writeEventLog="0" writeErrorLog="1">
+    <setting key="connection-string">Password=mybookmarks; Data Source=../../DataSources/Bookmarks/Bookmarks.sdf;</setting>
+  </dexter-settings>
+  <dexter.configs writeEventLog="0" writeErrorLog="1">
+    <dexter>
+    </dexter>
+  </dexter.configs>
+</dexter.configuration>

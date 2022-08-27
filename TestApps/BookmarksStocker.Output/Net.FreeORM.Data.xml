@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Net.FreeORM.Data</name>
+    </assembly>
+    <members>
+        <member name="M:Net.FreeORM.Data.Client.ConnectionDB2.Dispose">
+            <summary>
+            Disposes Connection object.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.ConnectionFactory.CreateConnection(Net.FreeORM.Base.ConnectionTypes)">
+            <summary>
+            Creates IConnection object with given parameters.
+            </summary>
+            <param name="connectionString">Connection String</param>
+            <returns>Returns IConnection object.</returns>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.ConnectionFactory.CreateConnection(Net.FreeORM.Base.ConnectionTypes,System.String)">
+            <summary>
+            Creates IConnection object with given parameters.
+            </summary>
+            <param name="connType">Connection Type</param>
+            <param name="connectionString">Connection String</param>
+            <returns>Returns IConnection object.</returns>
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.ConnectionType">
+            <summary>
+            Gets Connection Type Of IConnection.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.Open">
+            <summary>
+            Opens Database connection.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.Close">
+            <summary>
+            Closes Database connection.
+            </summary>
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.ConnectionState">
+            <summary>
+            Gets Connection State of database Connection.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.CreateTransaction">
+            <summary>
+            Creates Transaction Object.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.CreateTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Creates Transaction Object.
+            </summary>
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.Transaction">
+            <summary>
+            Gets Transaction object.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.CommitTransaction">
+            <summary>
+            Commits Transaction.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.RollbackTransaction">
+            <summary>
+            Rollbacks Transaction.
+            </summary>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.CreateAdapter">
+            <summary>
+            Creates DbDataAdapter object.
+            </summary>
+            <returns>Returns System.Data.Common.DbDataAdapter object.</returns>
+        </member>
+        <member name="M:Net.FreeORM.Data.Client.IConnection.CreateCommand">
+            <summary>
+            Creates DbCommand object.
+            </summary>
+            <returns>Returns System.Data.Common.DbCommand object.</returns>
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.ConnectionStringBuilder">
+            <summary>
+            Creates DbConnectionStringBuilder object.
+            </summary>
+            <returns>Returns System.Data.Common.DbConnectionStringBuilder object.</returns>        
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.ConnectionString">
+            <summary>
+            Gets, Sets Connection String Of IConnection
+            </summary>
+        </member>
+        <member name="P:Net.FreeORM.Data.Client.IConnection.Database">
+            <summary>
+            Gets Database name.
+            </summary>
+        </member>
+    </members>
+</doc>
