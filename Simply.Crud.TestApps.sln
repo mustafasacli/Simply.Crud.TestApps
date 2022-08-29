@@ -54,8 +54,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrudTestApps", "CrudTestApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInsertConsoleApp", "CrudTestApps\CrudInsertConsoleApp\CrudInsertConsoleApp.csproj", "{06A6DACF-145E-4001-B7F7-D359086B9EA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInsertAndReturnIdConsoleApp", "CrudTestApps\CrudInsertAndReturnIdConsoleApp\CrudInsertAndReturnIdConsoleApp.csproj", "{E36EC978-B082-4033-BE9D-F286E3EDC9F9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInsertWithIdConsoleApp", "CrudTestApps\CrudInsertWithConsoleApp\CrudInsertWithIdConsoleApp.csproj", "{F6A20CA3-FD96-49D0-8D55-2D5D30F312D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudUpdateConsoleApp", "CrudTestApps\CrudUpdateConsoleApp\CrudUpdateConsoleApp.csproj", "{4D2E6D92-4554-4542-B3D9-68C3EBBE4B0C}"
@@ -76,31 +74,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkUpdateConsoleApp", "Bul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SelectTestApps", "SelectTestApps", "{8ADEFA7D-54BC-4797-93A5-7A6C1819A3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetDbRowOperatorTestApp", "SelectTestApps\GetDbRowOperatorTestApp\GetDbRowOperatorTestApp.csproj", "{5C7FBB98-684D-4135-A792-5C2D1A44B78E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetDbRowOperatorTestApp", "SelectTestApps\GetDbRowOperatorTestApp\GetDbRowOperatorTestApp.csproj", "{5C7FBB98-684D-4135-A792-5C2D1A44B78E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetOperatorTestApp", "SelectTestApps\GetOperatorTestApp\GetOperatorTestApp.csproj", "{55FAD10D-64AC-4BCC-A0CA-5E8EEE314973}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetOperatorTestApp", "SelectTestApps\GetOperatorTestApp\GetOperatorTestApp.csproj", "{55FAD10D-64AC-4BCC-A0CA-5E8EEE314973}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PartialTestApps", "PartialTestApps", "{703F09EA-8F75-4512-BE46-2FEA58F43E5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhereTestApps", "WhereTestApps", "{3608D437-1A5E-45A9-B3BD-CA0614F83A5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialDeleteOperatorTestApp", "PartialTestApps\PartialDeleteOperatorTestApp\PartialDeleteOperatorTestApp.csproj", "{58D417A8-B600-423D-A3C2-D62C0B44DA90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialDeleteOperatorTestApp", "PartialTestApps\PartialDeleteOperatorTestApp\PartialDeleteOperatorTestApp.csproj", "{58D417A8-B600-423D-A3C2-D62C0B44DA90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialInsertOperatorTestApp", "PartialTestApps\PartialInsertOperatorTestApp\PartialInsertOperatorTestApp.csproj", "{452E90B0-D143-4137-9408-816125C6ACF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialInsertOperatorTestApp", "PartialTestApps\PartialInsertOperatorTestApp\PartialInsertOperatorTestApp.csproj", "{452E90B0-D143-4137-9408-816125C6ACF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialReadOperatorTestApp", "PartialTestApps\PartialReadOperatorTestApp\PartialReadOperatorTestApp.csproj", "{E29ED12F-905B-4B0C-BE03-B2206CA0E87F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialReadOperatorTestApp", "PartialTestApps\PartialReadOperatorTestApp\PartialReadOperatorTestApp.csproj", "{E29ED12F-905B-4B0C-BE03-B2206CA0E87F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartialUpdateOperatorTestApp", "PartialTestApps\PartialUpdateOperatorTestApp\PartialUpdateOperatorTestApp.csproj", "{6CCE2817-DA29-4D1D-8961-D0B800F43E24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PartialUpdateOperatorTestApp", "PartialTestApps\PartialUpdateOperatorTestApp\PartialUpdateOperatorTestApp.csproj", "{6CCE2817-DA29-4D1D-8961-D0B800F43E24}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PredicateOperatorTestAp", "SelectTestApps\PredicateOperatorTestAp\PredicateOperatorTestAp.csproj", "{8970F535-C7FC-448B-B2A5-7C803FE2036A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereDeleteOperatorTestapp", "WhereTestApps\WhereDeleteOperatorTestapp\WhereDeleteOperatorTestapp.csproj", "{65868697-6817-4FB7-904C-8BFF99178115}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhereDeleteOperatorTestapp", "WhereTestApps\WhereDeleteOperatorTestapp\WhereDeleteOperatorTestapp.csproj", "{65868697-6817-4FB7-904C-8BFF99178115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereSelectDbRowOperatorTestApp", "WhereTestApps\WhereSelectDbRowOperatorTestApp\WhereSelectDbRowOperatorTestApp.csproj", "{1A30A864-B8BD-484F-BC61-A47E216FA2DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhereSelectDbRowOperatorTestApp", "WhereTestApps\WhereSelectDbRowOperatorTestApp\WhereSelectDbRowOperatorTestApp.csproj", "{1A30A864-B8BD-484F-BC61-A47E216FA2DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereSelectOperatorTestApp", "WhereTestApps\WhereSelectOperatorTestApp\WhereSelectOperatorTestApp.csproj", "{A734857E-4614-4F24-89BD-F6E4F9B26D27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhereSelectOperatorTestApp", "WhereTestApps\WhereSelectOperatorTestApp\WhereSelectOperatorTestApp.csproj", "{A734857E-4614-4F24-89BD-F6E4F9B26D27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhereUpdateOperatorTestApp", "WhereTestApps\WhereUpdateOperatorTestApp\WhereUpdateOperatorTestApp.csproj", "{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WhereUpdateOperatorTestApp", "WhereTestApps\WhereUpdateOperatorTestApp\WhereUpdateOperatorTestApp.csproj", "{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity", "Entity", "{DFF5F662-B7CC-4F8D-991D-F14A23699B2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInsertAndReturnIdConsoleApp", "CrudTestApps\CrudInsertAndReturnIdConsoleApp\CrudInsertAndReturnIdConsoleApp.csproj", "{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyCrud.Project.Entites", "Entity\SimplyCrud.Project.Entites\SimplyCrud.Project.Entites.csproj", "{DB31F005-317B-4382-AEB6-0AD9CA927B9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,10 +188,6 @@ Global
 		{06A6DACF-145E-4001-B7F7-D359086B9EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06A6DACF-145E-4001-B7F7-D359086B9EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06A6DACF-145E-4001-B7F7-D359086B9EA8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E36EC978-B082-4033-BE9D-F286E3EDC9F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E36EC978-B082-4033-BE9D-F286E3EDC9F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E36EC978-B082-4033-BE9D-F286E3EDC9F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E36EC978-B082-4033-BE9D-F286E3EDC9F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6A20CA3-FD96-49D0-8D55-2D5D30F312D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6A20CA3-FD96-49D0-8D55-2D5D30F312D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6A20CA3-FD96-49D0-8D55-2D5D30F312D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -264,6 +264,14 @@ Global
 		{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -286,7 +294,6 @@ Global
 		{1C6DB21D-840C-4701-87AF-FA06DA45DB2C} = {236D27C5-36A6-47B7-B174-44E9CA5A8931}
 		{EC709DA2-BC3C-4A18-8879-AF038A5696E3} = {236D27C5-36A6-47B7-B174-44E9CA5A8931}
 		{06A6DACF-145E-4001-B7F7-D359086B9EA8} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
-		{E36EC978-B082-4033-BE9D-F286E3EDC9F9} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
 		{F6A20CA3-FD96-49D0-8D55-2D5D30F312D3} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
 		{4D2E6D92-4554-4542-B3D9-68C3EBBE4B0C} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
 		{D1954151-A18E-430C-A7E2-021AAC10F1CC} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
@@ -306,6 +313,8 @@ Global
 		{1A30A864-B8BD-484F-BC61-A47E216FA2DD} = {3608D437-1A5E-45A9-B3BD-CA0614F83A5B}
 		{A734857E-4614-4F24-89BD-F6E4F9B26D27} = {3608D437-1A5E-45A9-B3BD-CA0614F83A5B}
 		{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353} = {3608D437-1A5E-45A9-B3BD-CA0614F83A5B}
+		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
+		{DB31F005-317B-4382-AEB6-0AD9CA927B9C} = {DFF5F662-B7CC-4F8D-991D-F14A23699B2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2133F4DE-060E-4478-BD6F-7626ED3D1888}

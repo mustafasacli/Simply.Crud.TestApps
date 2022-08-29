@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CrudInsertAndReturnIdConsoleApp</RootNamespace>
-    <AssemblyName>CrudInsertAndReturnIdConsoleApp</AssemblyName>
+    <ProjectGuid>{DB31F005-317B-4382-AEB6-0AD9CA927B9C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimplyCrud.Project.Entites</RootNamespace>
+    <AssemblyName>SimplyCrud.Project.Entites</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,10 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,30 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="EntityBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Simply.Crud\Simply.Crud.Soln\Crud\Simply.Crud\Simply.Crud.csproj">
-      <Project>{d8981a88-0e0c-4298-ad61-0a5775ed50a9}</Project>
-      <Name>Simply.Crud</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Common\Simply.Common.csproj">
-      <Project>{a81ff695-21ac-48c0-aa35-ba906168b95d}</Project>
-      <Name>Simply.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Data\Simply.Data.csproj">
-      <Project>{f374850b-07d2-4e3c-a3ec-bff273dee3c7}</Project>
-      <Name>Simply.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Entity\SimplyCrud.Project.Entites\SimplyCrud.Project.Entites.csproj">
-      <Project>{db31f005-317b-4382-aeb6-0ad9ca927b9c}</Project>
-      <Name>SimplyCrud.Project.Entites</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

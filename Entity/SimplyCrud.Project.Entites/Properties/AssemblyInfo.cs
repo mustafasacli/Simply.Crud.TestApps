@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CrudInsertAndReturnIdConsoleApp")]
+[assembly: AssemblyTitle("SimplyCrud.Project.Entites")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CrudInsertAndReturnIdConsoleApp")]
+[assembly: AssemblyProduct("SimplyCrud.Project.Entites")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5295b36f-e4c4-44db-9ee2-7287c6bb74cc")]
+[assembly: Guid("db31f005-317b-4382-aeb6-0ad9ca927b9c")]
 
 // Version information for an assembly consists of the following four values:
 //
