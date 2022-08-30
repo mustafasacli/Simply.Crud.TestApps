@@ -12,13 +12,14 @@ namespace SimplyCrud.Project.Entites
 
         public Person CreatePersonObject()
         {
-            Random random = new Random();
             int year = random.Next(1900, Now.Year);
             int month = random.Next(1, 12);
             int day = random.Next(1, month == 2 ? 28 : 30);
             string fname = RandomString(40);
             string lname = RandomString(40);
             char gender = random.Next(0, 1) == 1 ? 'E' : 'K';
+            byte[] img = new byte[100];
+            random.NextBytes(img);
 
             return new Person
             {
@@ -26,7 +27,8 @@ namespace SimplyCrud.Project.Entites
                 LastName = lname,
                 Gender = gender,
                 BirthDate = new DateTime(year, month, day),
-                SsNo = RandomString(18)
+                SsNo = RandomString(18),
+                Image = img
             };
         }
 

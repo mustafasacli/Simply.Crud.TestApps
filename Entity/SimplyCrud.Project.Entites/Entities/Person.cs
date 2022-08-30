@@ -78,11 +78,15 @@ namespace SimplyCrud.Project.Entity
         public int? BirthDateInt
         { get; set; }
 
+        [Column("image", Order = 9, TypeName = "blob")]
+        public byte[] Image
+        { get; set; }
+
         /// <summary>
         /// Gets or Sets the IsDeleted
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "IsDeleted alanýna veri girilmelidir.")]
-        [Column("is_deleted", Order = 9, TypeName = "tinyint")]
+        [Column("is_deleted", Order = 10, TypeName = "tinyint")]
         public bool IsDeleted
         { get; set; }
 
@@ -90,7 +94,7 @@ namespace SimplyCrud.Project.Entity
         /// Gets or Sets the IsActive
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "IsActive alanýna veri girilmelidir.")]
-        [Column("is_active", Order = 10, TypeName = "tinyint")]
+        [Column("is_active", Order = 11, TypeName = "tinyint")]
         public bool IsActive
         { get; set; } = true;
 
@@ -99,7 +103,7 @@ namespace SimplyCrud.Project.Entity
         /// Gets or Sets the CreatedOn
         /// </summary>
         [Required(AllowEmptyStrings = false, ErrorMessage = "CreatedOn alanýna veri girilmelidir.")]
-        [Column("created_on", Order = 11, TypeName = "datetime")]
+        [Column("created_on", Order = 12, TypeName = "datetime")]
         public DateTime CreatedOn
         {
             get
@@ -113,7 +117,7 @@ namespace SimplyCrud.Project.Entity
         /// <summary>
         /// Gets or Sets the CreatedOnTick
         /// </summary>
-        [Column("created_on_tick", Order = 12, TypeName = "bigint")]
+        [Column("created_on_tick", Order = 13, TypeName = "bigint")]
         [NotMapped]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public long? CreatedOnTick
@@ -122,21 +126,21 @@ namespace SimplyCrud.Project.Entity
         /// <summary>
         /// Gets or Sets the CreatedBy
         /// </summary>
-        [Column("created_by", Order = 13, TypeName = "bigint")]
+        [Column("created_by", Order = 14, TypeName = "bigint")]
         public long? CreatedBy
         { get; set; }
 
         /// <summary>
         /// Gets or Sets the UpdatedOn
         /// </summary>
-        [Column("updated_on", Order = 14, TypeName = "datetime")]
+        [Column("updated_on", Order = 15, TypeName = "datetime")]
         public DateTime? UpdatedOn
         { get; set; }
 
         /// <summary>
         /// Gets or Sets the UpdatedOnTick
         /// </summary>
-        [Column("updated_on_tick", Order = 15, TypeName = "bigint")]
+        [Column("updated_on_tick", Order = 16, TypeName = "bigint")]
         [NotMapped]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public long? UpdatedOnTick
@@ -145,7 +149,7 @@ namespace SimplyCrud.Project.Entity
         /// <summary>
         /// Gets or Sets the UpdatedBy
         /// </summary>
-        [Column("updated_by", Order = 16, TypeName = "bigint")]
+        [Column("updated_by", Order = 17, TypeName = "bigint")]
         public long? UpdatedBy
         { get; set; }
     }
