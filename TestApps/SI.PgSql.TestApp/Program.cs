@@ -1,52 +1,38 @@
 ﻿using Simply.Crud;
-using Simply.Data;
-using Npgsql;
+using Simply.Data.Interfaces;
+using SimplyCrud_TestDb_PostgreSql;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
 
 namespace SI.PgSql.TestApp
 {
     internal class Program
     {
-        private static IDbConnection GetDbConnection()
-        {
-            //return new NpgsqlConnection("server = 127.0.0.1; Database = pagila; user id = postgres; password = 123456;");
-            return new NpgsqlConnection("server = 127.0.0.1; Database = postgres; user id = postgres; password = pg123;");
-        }
-
         private static void Main(string[] args)
         {
-            using (var connection = GetDbConnection())
+            using (ISimpleDatabase database = new SimplePostgreSqlDatabase())
             {
-                try
+                int id = 0;
+                var result = database.PartialInsertAndReturnId<Country>(new { CountryName = "Yeni Ülke " + DateTime.Now.Ticks.ToString() });
+                Console.WriteLine(result.ExecutionResult);
+                Console.WriteLine(result.Result);
+                if (result.Result != null)
                 {
-                    int id = 0;
-                    //var cntr = new Country { CountryName = countryName, LastUpdate = DateTime.Now };
-                    connection.OpenIfNot();
-                    var result = connection.PartialInsertAndReturnId<Country>(new { CountryName = "Yeni Ülke " + DateTime.Now.Ticks.ToString() });
-                    Console.WriteLine(result.ExecutionResult);
-                    Console.WriteLine(result.Result);
-                    if (result.Result != null)
-                    {
-                        int.TryParse(result.Result.ToString(), out id);
-                    }
-
-                    if (result.AdditionalValues != null)
-                    {
-                        foreach (var key in result.AdditionalValues.Keys)
-                        {
-                            Console.WriteLine("{0} : {1}", key, result.AdditionalValues[key]);
-                            int.TryParse(result.AdditionalValues[key].ToString(), out id);
-                        }
-                    }
-
-                    var exec = connection.PartialUpdate<Country>(new { CountryName = "Yeni Ülke22 Güncel " + DateTime.Now.Ticks.ToString(), LastUpdate = DateTime.Now }, p => p.CountryId == id);
-                    Console.WriteLine(exec);
+                    int.TryParse(result.Result.ToString(), out id);
                 }
-                finally
-                { connection.CloseIfNot(); }
+
+                if (result.AdditionalValues != null)
+                {
+                    foreach (var key in result.AdditionalValues.Keys)
+                    {
+                        Console.WriteLine("{0} : {1}", key, result.AdditionalValues[key]);
+                        int.TryParse(result.AdditionalValues[key].ToString(), out id);
+                    }
+                }
+
+                var exec = database.PartialUpdate<Country>(new { CountryName = "Yeni Ülke22 Güncel " + DateTime.Now.Ticks.ToString(), LastUpdate = DateTime.Now }, p => p.CountryId == id);
+                Console.WriteLine(exec);
             }
 
             Console.ReadKey();

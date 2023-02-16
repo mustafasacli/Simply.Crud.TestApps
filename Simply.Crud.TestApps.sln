@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32811.315
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestApps", "TestApps", "{DF98C51B-2381-4870-B9D9-22CE5C7D590D}"
 EndProject
@@ -105,6 +105,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudInsertAndReturnIdConsoleApp", "CrudTestApps\CrudInsertAndReturnIdConsoleApp\CrudInsertAndReturnIdConsoleApp.csproj", "{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyCrud.Project.Entites", "Entity\SimplyCrud.Project.Entites\SimplyCrud.Project.Entites.csproj", "{DB31F005-317B-4382-AEB6-0AD9CA927B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyCrud_TestDb_MySql", "Databases\SimplyCrud_TestDb_MySql\SimplyCrud_TestDb_MySql.csproj", "{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Databases", "Databases", "{D5F5D405-386F-4B6B-984D-CE207221EA89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyCrud_TestDb_PostgreSql", "Databases\SimplyCrud_TestDb_PostgreSql\SimplyCrud_TestDb_PostgreSql.csproj", "{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -272,6 +278,14 @@ Global
 		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB31F005-317B-4382-AEB6-0AD9CA927B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -315,6 +329,8 @@ Global
 		{721DBE0B-DF9E-4BE9-8766-5AA3ACB9C353} = {3608D437-1A5E-45A9-B3BD-CA0614F83A5B}
 		{5295B36F-E4C4-44DB-9EE2-7287C6BB74CC} = {DC393998-B0A1-4CEB-B2A0-627891126AA8}
 		{DB31F005-317B-4382-AEB6-0AD9CA927B9C} = {DFF5F662-B7CC-4F8D-991D-F14A23699B2A}
+		{D344ADA8-60BE-4416-BBBD-6BB54E6690C1} = {D5F5D405-386F-4B6B-984D-CE207221EA89}
+		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F} = {D5F5D405-386F-4B6B-984D-CE207221EA89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2133F4DE-060E-4478-BD6F-7626ED3D1888}

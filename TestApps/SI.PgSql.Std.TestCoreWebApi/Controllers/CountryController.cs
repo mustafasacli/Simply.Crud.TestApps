@@ -1,12 +1,11 @@
-﻿using Simply.Crud;
-using Simply.Data;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Npgsql;
+using Simply.Crud;
+using Simply.Crud.DatabaseExtensions;
+using Simply.Data.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
 using System.Linq;
 
 namespace SI.PgSql.Std.TestCoreWebApi.Controllers
@@ -15,36 +14,22 @@ namespace SI.PgSql.Std.TestCoreWebApi.Controllers
     [Route("[controller]")]
     public class CountryController : ControllerBase
     {
-
-        private static IDbConnection GetDbConnection()
-        {
-            //return new NpgsqlConnection("server = 127.0.0.1; Database = pagila; user id = postgres; password = 123456;");
-            return new NpgsqlConnection("server = 127.0.0.1; Database = postgres; user id = postgres; password = pg123;");
-        }
-
         private readonly ILogger<CountryController> _logger;
+        private readonly ISimpleDatabase _database;
 
-        public CountryController(ILogger<CountryController> logger)
+        public CountryController(ILogger<CountryController> logger, ISimpleDatabase database)
         {
             _logger = logger;
+            _database = database;
         }
 
         // access url is; http://localhost:57744/country?countryName=Aperi
         [HttpPost]
         public object Add(string countryName)
         {
-            using (var connection = GetDbConnection())
-            {
-                try
-                {
-                    var cntr = new Country { CountryName = countryName, LastUpdate = DateTime.Now };
-                    connection.OpenIfNot();
-                    var result = connection.InsertAndGetId(cntr);
-                    return result;
-                }
-                finally
-                { connection.CloseIfNot(); }
-            }
+            var cntr = new Country { CountryName = countryName, LastUpdate = DateTime.Now };
+            var result = _database.InsertAndGetId(cntr);
+            return result;
         }
 
         // access url is; https://localhost:44311/api/country/get?countryId=1
@@ -53,19 +38,7 @@ namespace SI.PgSql.Std.TestCoreWebApi.Controllers
         [HttpGet]
         public Country Get(long? countryId)
         {
-            Country country = new Country();
-
-            using (var connection = GetDbConnection())
-            {
-                try
-                {
-                    connection.OpenIfNot();
-                    //country = connection.GetById<Country>(commandTimeout: null, countryId ?? 0L);
-                    country = connection.FirstOrDefault<Country>(q => q.CountryId == countryId);
-                }
-                finally
-                { connection.CloseIfNot(); }
-            }
+            Country country = _database.FirstOrDefault<Country>(q => q.CountryId == countryId);
             return country;
         }
     }
