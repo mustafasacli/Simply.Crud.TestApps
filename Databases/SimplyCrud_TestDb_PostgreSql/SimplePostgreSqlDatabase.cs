@@ -12,7 +12,7 @@ namespace SimplyCrud_TestDb_PostgreSql
             // return new NpgsqlConnection("server = 127.0.0.1; Database = postgres; user id = postgres; password = pg123;");
         }
 
-        public SimplePostgreSqlDatabase() : base(GetDbConnection())
+        public SimplePostgreSqlDatabase() : base(Create<NpgsqlConnection>("server=127.0.0.1;Database=pagila;user id=postgres;password=123456;"))// GetDbConnection())
         {
         }
     }

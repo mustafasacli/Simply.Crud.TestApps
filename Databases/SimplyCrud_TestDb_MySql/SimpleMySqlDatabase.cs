@@ -14,7 +14,7 @@ namespace SimplyCrud_TestDb_MySql
             // return new MySqlConnection { ConnectionString = "data source=127.0.0.1;initial catalog=classicmodels;user id=root;" };
         }
 
-        public SimpleMySqlDatabase() : base(GetDbConnection())
+        public SimpleMySqlDatabase() : base(Create<MySqlConnection>("data source=127.0.0.1;initial catalog=crud_test_db;user id=root;")) //GetDbConnection())
         {
         }
     }

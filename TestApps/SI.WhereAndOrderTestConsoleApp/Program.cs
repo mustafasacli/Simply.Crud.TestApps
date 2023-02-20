@@ -26,13 +26,13 @@ namespace SI.WhereAndOrderTestConsoleApp
             var cmdDef = builder.GetCommand();
             Console.WriteLine(cmdDef.CommandText);
             Console.WriteLine("**********************************************");
-            int i = 0;
+            int counter = 0;
             foreach (var parameter in cmdDef.CommandParameters)
             {
                 var cmdParameter = parameter as DbCommandParameter;
-                Console.WriteLine(i + ". Parameter Name: " + cmdParameter.ParameterName);
-                Console.WriteLine(i + ". Parameter value: " + (cmdParameter.Value.IsNullOrDbNull() ? "*null*" : cmdParameter.Value.ToString()));
-                i++;
+                Console.WriteLine(counter + ". Parameter Name: " + cmdParameter.ParameterName);
+                Console.WriteLine(counter + ". Parameter value: " + (cmdParameter.Value.IsNullOrDbNull() ? "*null*" : cmdParameter.Value.ToString()));
+                counter++;
                 Console.WriteLine("-------------------------------------------");
             }
             Console.ReadKey();
