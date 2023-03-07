@@ -19,6 +19,8 @@ using Simply.Crud;
 using System.Configuration;
 using Simply.Common;
 using Simply.Data.Interfaces;
+using SimplyCrud_TestDb_MySql;
+using Simply.Crud.DatabaseExtensions;
 
 namespace BulkInsertAndReturnIdConsoleApp
 {
@@ -48,15 +50,14 @@ namespace BulkInsertAndReturnIdConsoleApp
             }
 
             IDbCommandResult<object[]> result;
-            using (IDbConnection connection = GetDbConnection())
+            using (ISimpleDatabase connection = new SimpleMySqlDatabase())
             {
                 try
                 {
-                    result = connection.OpenAnd()
-                       .InsertAndGetId(persons);
+                    result = connection.InsertAndGetId(persons);
                 }
                 finally
-                { connection.CloseIfNot(); }
+                { connection.Close(); }
             }
 
             Console.WriteLine("ExecutionResult: " + result?.ExecutionResult);

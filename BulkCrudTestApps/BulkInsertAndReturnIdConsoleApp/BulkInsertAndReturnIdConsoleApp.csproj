@@ -67,6 +67,10 @@
       <Project>{f374850b-07d2-4e3c-a3ec-bff273dee3c7}</Project>
       <Name>Simply.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Databases\SimplyCrud_TestDb_MySql\SimplyCrud_TestDb_MySql.csproj">
+      <Project>{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}</Project>
+      <Name>SimplyCrud_TestDb_MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Entity\SimplyCrud.Project.Entites\SimplyCrud.Project.Entites.csproj">
       <Project>{db31f005-317b-4382-aeb6-0ad9ca927b9c}</Project>
       <Name>SimplyCrud.Project.Entites</Name>
