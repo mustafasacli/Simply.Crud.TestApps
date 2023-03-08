@@ -1,39 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using Simply.Data;
-using System.Collections;
+﻿using MySql.Data.MySqlClient;
+using Simply.Crud.DatabaseExtensions;
+using Simply.Data.Database;
+using Simply.Data.Interfaces;
 using SimplyCrud.Project.Entites;
 using SimplyCrud.Project.Entity;
-using Simply.Crud;
+using System;
 
 namespace CrudInsertAndReturnIdConsoleApp
 {
     internal class Program
     {
         private static readonly EntityBuilder entityBuilder = new EntityBuilder();
-        internal static IDbConnection GetDbConnection()
-        {
-            return new MySqlConnection { ConnectionString = "data source=127.0.0.1;initial catalog=crud_test_db;user id=root;" };
-        }
-        static void Main(string[] args)
+
+        //internal static IDbConnection GetDbConnection()
+        //{
+        //    return new MySqlConnection { ConnectionString = "data source=127.0.0.1;initial catalog=crud_test_db;user id=root;" };
+        //}
+        private static void Main(string[] args)
         {
             Person person = entityBuilder.CreatePersonObject();
             object result;
-            using (IDbConnection connection = GetDbConnection())
+            using (ISimpleDatabase database = new SimpleDatabase(
+                SimpleDatabase.Create<MySqlConnection>("data source=127.0.0.1;initial catalog=crud_test_db;user id=root;")))
             {
                 try
                 {
-                    result = connection.OpenAnd()
-                       .InsertAndGetId(person);
+                    result = database.InsertAndGetId(person);
                 }
                 finally
-                { connection.CloseIfNot(); }
+                { database.Close(); }
             }
             Console.WriteLine(result?.ToString() ?? "#null#");
             Console.Read();
