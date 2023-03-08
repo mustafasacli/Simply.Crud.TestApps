@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Simply.Crud;
+﻿using Simply.Crud;
 using Simply.Crud.DatabaseExtensions;
-using Simply.Data;
 using Simply.Data.Database;
-using Simply.Data.DatabaseExtensions;
 using Simply.Data.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,13 +10,13 @@ using System.Threading;
 
 namespace SI.SQLite.TestApp
 {
-    class Program
+    internal class Program
     {
         private static string dbFilePath = @"Data Source=D:\GitProjects\Simply.Crud.TestApps\TestApps\SI.SQLite.TestApp\TestSqliteDatabase.db3;Version=3;";
         internal static readonly string LocalConnectionString = "Data Source=localDB.s3db;";
         internal static readonly string LocalV3ConnectionString = "Data Source=localDB.s3db;Version=3;Read Only=False;";
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             DateTime now = DateTime.Now;
             Console.WriteLine(now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -75,7 +68,7 @@ namespace SI.SQLite.TestApp
         }
     }
 
-    class TestTable
+    internal class TestTable
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id
