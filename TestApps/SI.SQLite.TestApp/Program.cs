@@ -1,5 +1,9 @@
 ﻿using Simply.Crud;
+using Simply.Crud.DatabaseExtensions;
 using Simply.Data;
+using Simply.Data.Database;
+using Simply.Data.DatabaseExtensions;
+using Simply.Data.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SQLite;
@@ -23,22 +27,36 @@ namespace SI.SQLite.TestApp
             Console.WriteLine(dt2.ToString("yyyy-MM-dd HH:mm:ss"));
 
             Stopwatch sw = new Stopwatch();
-            using (var connection = new SQLiteConnection() { ConnectionString = dbFilePath })
+            using (ISimpleDatabase database = new SimpleDatabase(SimpleDatabase.Create<SQLiteConnection>(dbFilePath)))
             {
-                connection.OpenIfNot();
+                database.AutoClose = true;
                 var record = new TestTable();
                 record.Name = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff");
                 sw.Start();
-                var i = connection.InsertAndGetId(record);
-
+                var returnValues = database.InsertAndGetId(record);
+                Console.WriteLine("Result: " + returnValues.Result);
+                Console.WriteLine("ExecutionResult: " + returnValues.ExecutionResult);
+                if (returnValues.AdditionalValues != null)
+                {
+                    foreach (var item in returnValues.AdditionalValues.Keys)
+                    {
+                        Console.WriteLine("Key: " + returnValues.AdditionalValues[item]);
+                    }
+                }
+                Console.WriteLine("-------------------");
                 Console.WriteLine("ID: " + record.Id);
                 record.Name = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.ffffff");
-                connection.UpdateInternal(record);
+                int updateResult = database.Update(record);
+                Console.WriteLine("Update Result : " + updateResult);
+                Console.WriteLine("-------------------");
                 Thread.Sleep(1000);
-                connection.DeleteInternal(record);
+                updateResult = database.Delete(record);
+                Console.WriteLine("Delete Result : " + updateResult);
+                Console.WriteLine("-------------------");
                 sw.Stop();
                 Thread.Sleep(1000);
-                connection.CloseIfNot();
+                database.Close();
+                Console.WriteLine("Execution time(msec) : " + sw.ElapsedMilliseconds);
             }
             Console.ReadKey();
         }
