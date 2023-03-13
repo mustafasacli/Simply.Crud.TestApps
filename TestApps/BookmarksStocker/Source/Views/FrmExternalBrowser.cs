@@ -10,18 +10,21 @@ namespace BookmarksStocker.Source.Views
 {
     public partial class FrmExternalBrowser : Form
     {
-        int _browserId = -1;
+        private int _browserId = -1;
 
         public delegate void ExternalBrowserChage();
+
         public ExternalBrowserChage ExternalBrowserChanged;
 
         private BrowsersViewModel browser = null;
         private DataTable dtBrowserList = null;
         private bool isFormLoaded = false;
         private OpenFileDialog opFileDialog = null;
-        IBrowsersBusiness browsersBusiness;
+        private IBrowsersBusiness browsersBusiness;
 
-        public FrmExternalBrowser(DataTable dtBrowsers) : this(-1, dtBrowsers) { }
+        public FrmExternalBrowser(DataTable dtBrowsers) : this(-1, dtBrowsers)
+        {
+        }
 
         public FrmExternalBrowser(int browserId, DataTable dtBrowsers)
         {
@@ -38,12 +41,12 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-        void Frm_Load(object sender, EventArgs e)
+        private void Frm_Load(object sender, EventArgs e)
         {
             FormLoad();
         }
 
-        void FormLoad()
+        private void FormLoad()
         {
             try
             {
@@ -64,9 +67,8 @@ namespace BookmarksStocker.Source.Views
                     }
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "FormLoad");
 
@@ -82,20 +84,19 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-
-        void TxtNameChanged(object sender, EventArgs e)
+        private void TxtNameChanged(object sender, EventArgs e)
         {
             if (isFormLoaded)
                 browser.Name = txtName.Text;
         }
 
-        void TxtPathChanged(object sender, EventArgs e)
+        private void TxtPathChanged(object sender, EventArgs e)
         {
             if (isFormLoaded)
                 browser.Path = txtPath.Text;
         }
 
-        void Save()
+        private void Save()
         {
             try
             {
@@ -145,9 +146,8 @@ namespace BookmarksStocker.Source.Views
                 if (ExternalBrowserChanged != null)
                     ExternalBrowserChanged();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Save");
 
@@ -155,7 +155,7 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-        void CloseForm(object sender, EventArgs e)
+        private void CloseForm(object sender, EventArgs e)
         {
             this.Close();
         }

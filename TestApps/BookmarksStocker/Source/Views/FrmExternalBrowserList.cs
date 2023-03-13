@@ -11,9 +11,9 @@ namespace BookmarksStocker.Source.Views
 {
     public partial class FrmExternalBrowserList : Form
     {
-        DataTable browserList = new DataTable();
-        IBrowsersBusiness browsersBusiness;
-        List<BrowsersViewModel> browsers = new List<BrowsersViewModel>();
+        private DataTable browserList = new DataTable();
+        private IBrowsersBusiness browsersBusiness;
+        private List<BrowsersViewModel> browsers = new List<BrowsersViewModel>();
 
         public FrmExternalBrowserList()
         {
@@ -42,7 +42,6 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-
         #region [ SetDataSourceOfGRid method ]
 
         private void SetDataSourceOfGRid()
@@ -62,7 +61,7 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-        #endregion
+        #endregion [ SetDataSourceOfGRid method ]
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -79,22 +78,21 @@ namespace BookmarksStocker.Source.Views
             DeleteObj();
         }
 
-        void AddObj()
+        private void AddObj()
         {
             FrmExternalBrowser frmExtBrowser = new FrmExternalBrowser(browserList);
             frmExtBrowser.ExternalBrowserChanged += new FrmExternalBrowser.ExternalBrowserChage(this.UpdateForm);
             frmExtBrowser.ShowDialog();
         }
 
-        void UpdateForm()
+        private void UpdateForm()
         {
             try
             {
                 RefreshSource();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "UpdateForm");
 
@@ -102,7 +100,7 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-        void UpdateObj()
+        private void UpdateObj()
         {
             if (grdBrowsers.SelectedRows.Count > 0)
             {
@@ -113,7 +111,7 @@ namespace BookmarksStocker.Source.Views
             }
         }
 
-        void DeleteObj()
+        private void DeleteObj()
         {
             try
             {
@@ -127,9 +125,8 @@ namespace BookmarksStocker.Source.Views
                 browsersBusiness.Delete(br);
                 UpdateForm();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "DeleteObj");
 
@@ -142,10 +139,9 @@ namespace BookmarksStocker.Source.Views
             AddBrowser();
         }
 
-        void AddBrowser()
+        private void AddBrowser()
         {
             AddObj();
         }
-
     }
 }

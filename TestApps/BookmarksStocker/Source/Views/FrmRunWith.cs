@@ -3,7 +3,6 @@ using BookmarksStocker.Source.Util;
 using BookmarksStocker.Source.ViewModel;
 using BrowsersStocker.Source.Business;
 using Microsoft.Win32;
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,12 +10,11 @@ using System.Windows.Forms;
 
 namespace BookmarksStocker.Source.Views
 {
-
     public partial class FrmRunWith : Form
     {
-        string _url = string.Empty;
-        bool _isRegistered = true;
-        IBrowsersBusiness browsersBusiness;
+        private string _url = string.Empty;
+        private bool _isRegistered = true;
+        private IBrowsersBusiness browsersBusiness;
 
         public FrmRunWith(string url, bool isRegistered)
         {
@@ -43,16 +41,12 @@ namespace BookmarksStocker.Source.Views
                 cmbxBrowsers.SelectedIndex = -1;
                 cmbxBrowsers.Refresh();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Ctor");
-
                 MessageUtil.Error("Run With Form could not be opened.");
             }
         }
-
 
         private List<BrowsersViewModel> GetBrowsers()
         {
@@ -76,9 +70,7 @@ namespace BookmarksStocker.Source.Views
                     }
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 // FreeLogger.LogMethod(ex, this.Name, "GetBrowsers");
                 _browsers = new List<BrowsersViewModel>();
@@ -91,7 +83,7 @@ namespace BookmarksStocker.Source.Views
             RunWith();
         }
 
-        void RunWith()
+        private void RunWith()
         {
             try
             {
@@ -120,15 +112,11 @@ namespace BookmarksStocker.Source.Views
                 }
                 this.Close();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
             {
                 // FreeLogger.LogMethod(ex, this.Name, "RunWith");
-
                 MessageUtil.Error("Object could not be runned.");
             }
         }
-
     }
 }
