@@ -1907,6 +1907,13 @@
             <param name="isDistinct">if true column will be added as distinct, else just added.</param>
             <returns></returns>
         </member>
+        <member name="M:Simply.Crud.Condition.Where`1.AddSqlForSelect(Simply.Crud.Interfaces.ISimpleSql)">
+            <summary>
+            Adds the sql for select.
+            </summary>
+            <param name="simpleSql">The simple sql statement.</param>
+            <returns>A IWhere.</returns>
+        </member>
         <member name="M:Simply.Crud.Condition.Where`1.RemovePropertyForSelect``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
             <summary>
             Removes Property For Select operation.
@@ -1989,6 +1996,25 @@
             </summary>
             <param name="stringComparison">The string comparison.</param>
             <returns>A string.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.RangeCheck``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},``1,``1,Simply.Crud.Enums.ConditionTypes,System.Boolean)">
+            <summary>
+            Checks property value in given range or not.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="firstLimit">The first Limit value.</param>
+            <param name="lastLimit">The last limit value.</param>
+            <param name="conditionType">The condition type.</param>
+            <param name="isBetweenOrNot">If true, is between or not.</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to where condition.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IWhere instance.</returns>
         </member>
         <member name="T:Simply.Crud.Condition.WhereBuilderFactory">
              <summary>
@@ -3005,6 +3031,43 @@
             </summary>
             <returns>A string.</returns>
         </member>
+        <member name="M:Simply.Crud.Interfaces.IJoinBuilder`2.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to join statement.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IJoinBuilder instance.</returns>
+        </member>
+        <member name="T:Simply.Crud.Interfaces.ISimpleSql">
+            <summary>
+            The simple sql interface.
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Interfaces.ISimpleSql.Sql">
+            <summary>
+            Gets, sets sql text
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Interfaces.ISimpleSql.Values">
+            <summary>
+            Gets, sets sql values
+            </summary>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.ISimpleSql.SetSql(System.String)">
+            <summary>
+            Sets the sql, returns current instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.ISimpleSql.SetValues(System.Object[])">
+            <summary>
+            Sets the values, returns current instance.
+            </summary>
+            <param name="values">The values.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
         <member name="T:Simply.Crud.Interfaces.ITableAliasInfo">
             <summary>
             Defines the <see cref="T:Simply.Crud.Interfaces.ITableAliasInfo" />.
@@ -3183,6 +3246,13 @@
             <param name="isDistinct">if true column will be added as distinct, else just added.</param>
             <returns></returns>
         </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.AddSqlForSelect(Simply.Crud.Interfaces.ISimpleSql)">
+            <summary>
+            Adds the sql for select.
+            </summary>
+            <param name="simpleSql">The simple sql statement.</param>
+            <returns>A IWhere.</returns>
+        </member>
         <member name="M:Simply.Crud.Interfaces.IWhere`1.GetBaseCommand">
             <summary>
             Gets the database command.
@@ -3228,6 +3298,25 @@
             <param name="stringComparison">The string comparison.</param>
             <param name="conditionType">condition type (And-Or).</param>
             <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.RangeCheck``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},``1,``1,Simply.Crud.Enums.ConditionTypes,System.Boolean)">
+            <summary>
+            Checks property value in given range or not.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="firstLimit">The first Limit value.</param>
+            <param name="lastLimit">The last limit value.</param>
+            <param name="conditionType">The condition type.</param>
+            <param name="isBetweenOrNot">If true, is between or not.</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to where condition.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IWhere instance.</returns>
         </member>
         <member name="T:Simply.Crud.Join.JoinBuilder`2">
             <summary>
@@ -3299,6 +3388,14 @@
             <param name="comparisonType">The comparison type.</param>
             <returns>A string.</returns>
         </member>
+        <member name="M:Simply.Crud.Join.JoinBuilder`2.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to join statement.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IJoinBuilder instance.</returns>
+        </member>
         <member name="T:Simply.Crud.Join.JoinBuilderFactory">
             <summary>
             The join builder factory.
@@ -3361,6 +3458,11 @@
             Gets or sets a value indicating whether is distinct.
             </summary>
         </member>
+        <member name="P:Simply.Crud.Objects.SimpleProperty.IsSql">
+            <summary>
+            Gets or sets a value indicating whether statement is sql.
+            </summary>
+        </member>
         <member name="P:Simply.Crud.Objects.SimpleProperty.TableAliasInfo">
             <summary>
             Gets, sets Alias Info for table alias and use table name setting.
@@ -3390,6 +3492,61 @@
             </summary>
             <param name="querySetting">Query Setting for building full column name.</param>
             <returns>returns string instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleProperty.New(System.String,System.String,System.Boolean,System.Boolean,Simply.Crud.Interfaces.ITableAliasInfo)">
+            <summary>
+            Create a new instance.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="columnAlias">The column alias.</param>
+            <param name="isDistinct">If true, is distinct.</param>
+            <param name="isSql">If true, is sql.</param>
+            <param name="tableAlias">The table alias.</param>
+            <returns>Returns A SimpleProperty instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleProperty.SetEntityType(System.Type)">
+            <summary>
+            Sets the entity type and returns current instance.
+            </summary>
+            <param name="entityType">The entity type.</param>
+            <returns>Returns current instance.</returns>
+        </member>
+        <member name="T:Simply.Crud.Objects.SimpleSql">
+            <summary>
+            Defines the <see cref="T:Simply.Crud.Objects.SimpleSql" />.
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Objects.SimpleSql.Sql">
+            <summary>
+            Gets, sets sql text
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Objects.SimpleSql.Values">
+            <summary>
+            Gets, sets sql values
+            </summary>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.SetSql(System.String)">
+            <summary>
+            Sets the sql, returns current instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.SetValues(System.Object[])">
+            <summary>
+            Sets the values, returns current instance.
+            </summary>
+            <param name="values">The values.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.New(System.String,System.Object[])">
+            <summary>
+            Creates news instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <param name="values">The values.</param>
+            <returns>Returns new ISimpleSql instance.</returns>
         </member>
         <member name="T:Simply.Crud.Objects.TableAliasInfo">
             <summary>
@@ -4692,7 +4849,17 @@
         </member>
         <member name="F:Simply.Crud.Constants.DbCrudAppValues.OnString">
             <summary>
-            The on string
+            The "ON" string
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Constants.DbCrudAppValues.BetweenString">
+            <summary>
+            sql string "BETWEEN"
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Constants.DbCrudAppValues.NotBetweenString">
+            <summary>
+            sql string "NOT BETWEEN"
             </summary>
         </member>
         <member name="F:Simply.Crud.Constants.DbCrudAppValues.StandartQueryFormatForDelete">

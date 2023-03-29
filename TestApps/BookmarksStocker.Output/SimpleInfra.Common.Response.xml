@@ -24,6 +24,36 @@
             
              <value> A message describing the response. </value>
         </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse.New(System.Int32,System.String,System.String)">
+            <summary>
+            Creates new SimpleResponse
+            </summary>
+            <param name="responseCode"></param>
+            <param name="responseMessage"></param>
+            <param name="rCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse.SetCode(System.Int32)">
+            <summary>
+            Sets the code.
+            </summary>
+            <param name="responseCode">The response code.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse.SetRCode(System.String)">
+            <summary>
+            Sets the r code.
+            </summary>
+            <param name="rCode">The r code.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse.SetMessage(System.String)">
+            <summary>
+            Sets the message.
+            </summary>
+            <param name="responseMessage">The response message.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
         <member name="T:SimpleInfra.Common.Response.ServiceResponse">
              <summary>   A service response. </summary>
             
@@ -55,6 +85,53 @@
              <summary>   Gets or sets the data. </summary>
             
              <value> The data. </value>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.SetCode(System.Int32)">
+            <summary>
+            Sets the code.
+            </summary>
+            <param name="responseCode">The response code.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.SetRCode(System.String)">
+            <summary>
+            Sets the r code.
+            </summary>
+            <param name="rCode">The r code.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.SetMessage(System.String)">
+            <summary>
+            Sets the message.
+            </summary>
+            <param name="responseMessage">The response message.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.SetData(`0)">
+            <summary>
+            Sets the data.
+            </summary>
+            <param name="data">The data.</param>
+            <returns>A SimpleResponse.</returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.New(`0,System.Int32,System.String,System.String)">
+            <summary>
+            Creates new SimpleResponse instance.
+            </summary>
+            <param name="data"></param>
+            <param name="responseCode"></param>
+            <param name="responseMessage"></param>
+            <param name="rCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleInfra.Common.Response.SimpleResponse`1.Create(System.Int32,System.String,System.String)">
+            <summary>
+            Creates the.
+            </summary>
+            <param name="responseCode">The response code.</param>
+            <param name="responseMessage">The response message.</param>
+            <param name="rCode">The r code.</param>
+            <returns>A SimpleResponse.</returns>
         </member>
         <member name="T:SimpleInfra.Common.Response.ServiceResponse`1">
              <summary>   A service response. </summary>

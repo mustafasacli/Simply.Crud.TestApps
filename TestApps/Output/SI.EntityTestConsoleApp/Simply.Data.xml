@@ -3366,7 +3366,6 @@
             <summary>
             Converts the rows to list.
             </summary>
-            <param name="database">simple database object</param>
             <param name="rows">The rows.</param>
             <returns>A list of TS.</returns>
         </member>
@@ -5029,7 +5028,6 @@
             <summary>
             Get Column Name-Property Name as dictionary.
             </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
             <param name="includeNotMappedProperties"></param>
             <param name="includeComputedProperties"></param>
             <returns>The columns reverse.</returns>
@@ -5038,7 +5036,6 @@
             <summary>
             Get Property Name-Column Name as dictionary.
             </summary>
-            <typeparam name="T">Generic type parameter.</typeparam>
             <param name="includeNotMappedProperties"></param>
             <param name="includeComputedProperties"></param>
             <returns>The columns.</returns>

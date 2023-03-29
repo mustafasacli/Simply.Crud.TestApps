@@ -315,12 +315,22 @@
             Defines the deleteWhereIdCommandDictionary.
             </summary>
         </member>
-        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetCommandDefinition``1(Simply.Data.Enums.DbConnectionTypes,Simply.Crud.Enums.QueryTypes)">
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetCommandDefinition``1(Simply.Data.Enums.DbConnectionTypes,Simply.Crud.Enums.QueryTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Gets DbCommand Definition.
             </summary>
             <typeparam name="T">.</typeparam>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="queryType">Query type <see cref="T:Simply.Crud.Enums.QueryTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
+            <returns>The <see cref="T:Simply.Data.Objects.SimpleDbCommand"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetCommandDefinition``1(Simply.Data.Interfaces.ISimpleDatabase,Simply.Crud.Enums.QueryTypes)">
+            <summary>
+            Gets DbCommand Definition.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">simple database instance.</param>
             <param name="queryType">Query type <see cref="T:Simply.Crud.Enums.QueryTypes"/>.</param>
             <returns>The <see cref="T:Simply.Data.Objects.SimpleDbCommand"/>.</returns>
         </member>
@@ -342,12 +352,30 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetInsertAndGetIdCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the insert and get identifier command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
         <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetInsertCommandFromCache``1(Simply.Data.Enums.DbConnectionTypes,System.Nullable{System.Int32})">
             <summary>
             Gets the insert command from cache.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetInsertCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the insert command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
@@ -360,12 +388,30 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetUpdateCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the update command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
         <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetDeleteCommandFromCache``1(Simply.Data.Enums.DbConnectionTypes,System.Nullable{System.Int32})">
             <summary>
             Gets the delete command from cache.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetDeleteCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the delete command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
@@ -378,12 +424,30 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetByIdCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the by identifier command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
         <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetWhereIdInCommandFromCache``1(Simply.Data.Enums.DbConnectionTypes,System.Nullable{System.Int32})">
             <summary>
             Gets the where identifier in command from cache.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetWhereIdInCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the where identifier in command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
@@ -396,12 +460,30 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetInsertWithIdCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the insert with identifier command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
         <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetDeleteWhereIdInCommandFromCache``1(Simply.Data.Enums.DbConnectionTypes,System.Nullable{System.Int32})">
             <summary>
             Gets the delete where identifier in command from cache.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="connectionType">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>SimpleDbCommand instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDbCommandBuilder.GetDeleteWhereIdInCommandFromCache``1(Simply.Data.Interfaces.ISimpleDatabase,System.Nullable{System.Int32})">
+            <summary>
+            Gets the delete where identifier in command from cache.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">simple database instance.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>SimpleDbCommand instance.</returns>
         </member>
@@ -579,146 +661,103 @@
             </summary>
             <returns>A ISimpleDefinitor object instance.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndReturnIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32},System.Boolean)">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndReturnIdInternal_V2``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32},System.Boolean)">
             <summary>
             Inserts the and return ıd ınternal.
             </summary>
-            <param name="connection">The connection.</param>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity.</param>
             <param name="commandTimeout">The command timeout.</param>
             <param name="isScalar">If true, is scalar.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndReturnIdInternal``1(System.Data.IDbConnection,System.Boolean,``0,Simply.Data.Objects.SimpleDbCommand)">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndReturnIdInternal``1(System.Boolean,``0,Simply.Data.Objects.SimpleDbCommand)">
             <summary>
-            Inners the ınsert and return ıd ınternal.
+            Inners the insert and return id internal.
             </summary>
-            <param name="connection">The connection.</param>
             <param name="isScalar">If true, is scalar.</param>
             <param name="entity">The entity.</param>
             <param name="commandDefinition">The command definition.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertListAndReturnIdsInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Boolean,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndReturnIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Boolean,``0,Simply.Data.Objects.SimpleDbCommand)">
             <summary>
-            Inners the ınsert list and return ıds ınternal.
+            Inners the insert and return id internal.
             </summary>
-            <param name="connection">The connection.</param>
-            <param name="entityList">The entity list.</param>
+            <param name="database">The database connection.</param>
             <param name="isScalar">If true, is scalar.</param>
-            <param name="commandTimeout">The command timeout.</param>
-            <returns>A IDbCommandResult.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndReturnIdInternal2``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32},System.Boolean)">
-            <summary>
-            Inserts the list and return ıd ınternal2.
-            </summary>
-            <param name="connection">The connection.</param>
-            <param name="entityList">The entity list.</param>
-            <param name="transaction">The transaction.</param>
-            <param name="commandTimeout">The command timeout.</param>
-            <param name="isScalar">If true, is scalar.</param>
-            <returns>A IDbCommandResult.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndReturnIdInternal2``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Boolean)">
-            <summary>
-            Inserts the and return ıd ınternal2.
-            </summary>
-            <param name="connection">The connection.</param>
             <param name="entity">The entity.</param>
-            <param name="transaction">The transaction.</param>
+            <param name="commandDefinition">The command definition.</param>
+            <returns>A IDbCommandResult.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertListAndReturnIdsInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Inners the insert list and return ids internal.
+            </summary>
+            <param name="database">The database connection.</param>
+            <param name="entityList">The entity list.</param>
+            <param name="isScalar">If true, is scalar.</param>
+            <param name="commandTimeout">The command timeout.</param>
+            <returns>A IDbCommandResult.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndReturnIdInternal2``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Inserts the list and return id internal2.
+            </summary>
+            <param name="database">The database connection.</param>
+            <param name="entityList">The entity list.</param>
             <param name="commandTimeout">The command timeout.</param>
             <param name="isScalar">If true, is scalar.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndReturnIdInternal2``1(System.Data.IDbConnection,System.Boolean,``0,Simply.Data.Objects.SimpleDbCommand,System.Data.IDbTransaction)">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndReturnIdInternal2``1(Simply.Data.Interfaces.ISimpleDatabase,``0,Simply.Data.Objects.SimpleDbCommand,System.Boolean)">
             <summary>
             Inners the ınsert and return ıd ınternal2.
             </summary>
-            <param name="connection">The connection.</param>
-            <param name="isScalar">If true, is scalar.</param>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity.</param>
             <param name="commandDefinition">The command definition.</param>
-            <param name="transaction">The transaction.</param>
+            <param name="isScalar">If true, is scalar.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.SetIdentityValue``1(``0,System.Object)">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.SetIdentityValue``1(``0,System.Object,Simply.Common.Interfaces.ISimpleDefinitor{``0})">
             <summary>
             Sets identity value into identity property of entity.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="entity"></param>
             <param name="value"></param>
+            <param name="definitor">Entity Definitor</param>
             <returns></returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.SetIdentityValues``1(``0,Simply.Data.Objects.DbCommandParameter[])">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.SetIdentityValues``1(``0,Simply.Data.Objects.DbCommandParameter[],Simply.Common.Interfaces.ISimpleDefinitor{``0})">
             <summary>
             Sets identity values into identity properties of entity.
             </summary>
             <typeparam name="T"></typeparam>
             <param name="entity">entity object</param>
             <param name="outputParameters">Output parameters</param>
+            <param name="definitor">Entity Definitor</param>
             <returns>Returns count of identy propert(y)ies value changed.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
         <member name="M:Simply.Crud.Command.BaseCommandExecutor.SetIdentityValuesOfEntity``1(``0,Simply.Data.Objects.DbCommandParameter[])">
             <summary>
@@ -729,47 +768,81 @@
             <param name="outputParameters">Output parameters</param>
             <returns>Returns count of identy propert(y)ies value changed.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalListScalar``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalListScalar``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts the and get ıd ınternal list scalar.
             </summary>
+            <param name="database">The database connection.</param>
             <param name="entities">The entities.</param>
             <param name="commandTimeout">The command timeout.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalScalar``1(``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalScalar``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts the and get identifier internal scalar.
             </summary>
             <typeparam name="T"></typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity.</param>
             <param name="commandTimeout">The command timeout.</param>
             <returns></returns>
             <exception cref="T:System.Exception">Identity Property can not be null for insert and return id.</exception>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalListExecutable``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndGetIdInternalScalar``1(Simply.Data.Interfaces.ISimpleDatabase,``0,Simply.Data.Objects.SimpleDbCommand)">
+            <summary>
+            Inners the ınsert and get ıd ınternal scalar.
+            </summary>
+            <param name="database">The database.</param>
+            <param name="entity">The entity.</param>
+            <param name="cachedDbCommand">The cached db command.</param>
+            <returns>A IDbCommandResult.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalListExecutable``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts the and get ıd ınternal list executable.
             </summary>
             <param name="entities">The entities.</param>
+            <param name="database">The database connection.</param>
             <param name="commandTimeout">The command timeout.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalExecutable``1(``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternalExecutable``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts the and get ıd ınternal executable.
             </summary>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity.</param>
             <param name="commandTimeout">The command timeout.</param>
             <returns>A IDbCommandResult.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndGetIdInternalExecutable``1(``0,Simply.Data.Objects.SimpleDbCommand)">
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InnerInsertAndGetIdInternalExecutable``1(Simply.Data.Interfaces.ISimpleDatabase,``0,Simply.Data.Objects.SimpleDbCommand)">
             <summary>
             Inners the ınsert and get ıd ınternal executable.
             </summary>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity.</param>
             <param name="cachedDbCommand">The cached db command.</param>
             <returns>A IDbCommandResult.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.BaseCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
         <member name="T:Simply.Crud.Command.ICommandExecutor">
             <summary>
@@ -786,62 +859,42 @@
             Gets the simple database.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.ICommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
@@ -858,49 +911,7 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
@@ -909,12 +920,33 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.DB2CommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -930,63 +962,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.FirebirdCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1002,63 +1014,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.MsSqlCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1074,63 +1066,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.MySqlCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1146,53 +1118,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:Simply.Crud.Command.NuoDbCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})" -->
-        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.NuoDbCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1208,63 +1170,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OdbcCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1280,63 +1222,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OledbCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1352,63 +1274,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.OracleCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1424,63 +1326,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.PgSqlCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1496,63 +1378,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlBaseCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1568,73 +1430,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndReturnIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32},System.Boolean)">
-            <summary>
-            Inserts the and return ıd ınternal.
-            </summary>
-            <param name="connection">The connection.</param>
-            <param name="entity">The entity.</param>
-            <param name="commandTimeout">The command timeout.</param>
-            <param name="isScalar">If true, is scalar.</param>
-            <returns>A IDbCommandResult.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlCECommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1650,63 +1482,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SqlDatabaseCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1722,63 +1534,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SQLiteCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1794,63 +1586,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SybaseCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1866,63 +1638,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.SynergyCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -1938,63 +1690,43 @@
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
             <param name="database">The simple database object instance.</param>
         </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id with Internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertListAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="transaction">Database transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertListAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity list And Gets Id List with Internal Transaction.
-            </summary>
-            <typeparam name="T"></typeparam>
-            <param name="connection">Database connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertAndGetId``1(``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
             <param name="entity">The entity <see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object <see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertListAndGetId``1(System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertListAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list And Gets Id List.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="entities">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity And Get Id with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entity">The entity <see cref="!:T"/>.</param>
+            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
+            <returns>Returns result as object<see cref="!:IDbCommandResult&lt;object&gt;"/>.</returns>
+        </member>
+        <member name="M:Simply.Crud.Command.VistaDbCommandExecutor.InsertListAndGetIdInternal``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+            <summary>
+            Inserts entity list And Gets Id List with Internal Transaction.
+            </summary>
+            <typeparam name="T">.</typeparam>
+            <param name="database">The database connection.</param>
+            <param name="entityList">entity list for insert and gets id list.<see cref="!:T"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns result as object array<see cref="!:IDbCommandResult&lt;object[]&gt;"/>.</returns>
         </member>
@@ -2175,6 +1907,13 @@
             <param name="isDistinct">if true column will be added as distinct, else just added.</param>
             <returns></returns>
         </member>
+        <member name="M:Simply.Crud.Condition.Where`1.AddSqlForSelect(Simply.Crud.Interfaces.ISimpleSql)">
+            <summary>
+            Adds the sql for select.
+            </summary>
+            <param name="simpleSql">The simple sql statement.</param>
+            <returns>A IWhere.</returns>
+        </member>
         <member name="M:Simply.Crud.Condition.Where`1.RemovePropertyForSelect``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
             <summary>
             Removes Property For Select operation.
@@ -2240,6 +1979,42 @@
             <param name="where1">The where1.</param>
             <param name="where2">The where2.</param>
             <returns>A IWhere instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.StringCheck``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String,Simply.Crud.Enums.StringComparisonTypes,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Checks the String value.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="value">The value.</param>
+            <param name="stringComparison">The string comparison.</param>
+            <param name="conditionType">condition type (And-Or).</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.GetStringComparisonTypeString(Simply.Crud.Enums.StringComparisonTypes)">
+            <summary>
+            Gets the string comparison type string.
+            </summary>
+            <param name="stringComparison">The string comparison.</param>
+            <returns>A string.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.RangeCheck``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},``1,``1,Simply.Crud.Enums.ConditionTypes,System.Boolean)">
+            <summary>
+            Checks property value in given range or not.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="firstLimit">The first Limit value.</param>
+            <param name="lastLimit">The last limit value.</param>
+            <param name="conditionType">The condition type.</param>
+            <param name="isBetweenOrNot">If true, is between or not.</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Condition.Where`1.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to where condition.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IWhere instance.</returns>
         </member>
         <member name="T:Simply.Crud.Condition.WhereBuilderFactory">
              <summary>
@@ -2481,7 +2256,7 @@
             Inserts entity list.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="database">simple database instance.</param>
             <param name="entities">Entity list.</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
@@ -2491,7 +2266,7 @@
             Updates entity list.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="database">simple database instance.</param>
             <param name="entities">Entity list.</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
@@ -2501,7 +2276,7 @@
             Deletes entity list.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="database">simple database instance.</param>
             <param name="entities">Entity list.</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
@@ -2511,7 +2286,7 @@
             Inserts entity list with identity property.
             </summary>
             <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
+            <param name="database">simple database instance.</param>
             <param name="entities">Entity list.</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
@@ -2596,7 +2371,7 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns entity instance with given id value(s).</returns>
         </member>
-        <member name="M:Simply.Crud.DbGetOperator.GetAll``1(Simply.Data.Interfaces.ISimpleDatabase,System.Data.IDbTransaction,Simply.Data.Interfaces.IPageInfo,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbGetOperator.GetAll``1(Simply.Data.Interfaces.ISimpleDatabase,Simply.Data.Interfaces.IPageInfo,System.Nullable{System.Int32})">
             <summary>
             Get All entities.
             </summary>
@@ -2612,9 +2387,7 @@
             </summary>
             <typeparam name="T">.</typeparam>
             <param name="database">The simple database object instance.</param>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
             <param name="idValues">id column values.</param>
-            <param name="transaction">Database transaction.</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns as entity list with given id values.</returns>
         </member>
@@ -2932,7 +2705,7 @@
             Defines the <see cref="T:Simply.Crud.SimpleDbRowGetOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.SimpleDbRowGetOperator.GetByIdDbRow``1(Simply.Data.Interfaces.ISimpleDatabase,System.Object[],System.Data.IDbTransaction,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.SimpleDbRowGetOperator.GetByIdDbRow``1(Simply.Data.Interfaces.ISimpleDatabase,System.Object[],System.Nullable{System.Int32})">
             <summary>
             Gets SimpleDbRow By Id.
             </summary>
@@ -2994,6 +2767,41 @@
         <member name="F:Simply.Crud.Enums.ComparisonTypes.GreaterOrEqual">
             <summary>
             Greater Or Equal
+            </summary>
+        </member>
+        <member name="T:Simply.Crud.Enums.StringComparisonTypes">
+            <summary>
+            String Comparison Types.
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.Contains">
+            <summary>
+            Contains
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.StartsWith">
+            <summary>
+            Contains
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.EndsWith">
+            <summary>
+            Contains
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.NotContains">
+            <summary>
+            Contains
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.NotStartsWith">
+            <summary>
+            Contains
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Enums.StringComparisonTypes.NotEndsWith">
+            <summary>
+            Contains
             </summary>
         </member>
         <member name="T:Simply.Crud.Enums.ConditionTypes">
@@ -3223,6 +3031,43 @@
             </summary>
             <returns>A string.</returns>
         </member>
+        <member name="M:Simply.Crud.Interfaces.IJoinBuilder`2.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to join statement.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IJoinBuilder instance.</returns>
+        </member>
+        <member name="T:Simply.Crud.Interfaces.ISimpleSql">
+            <summary>
+            The simple sql interface.
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Interfaces.ISimpleSql.Sql">
+            <summary>
+            Gets, sets sql text
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Interfaces.ISimpleSql.Values">
+            <summary>
+            Gets, sets sql values
+            </summary>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.ISimpleSql.SetSql(System.String)">
+            <summary>
+            Sets the sql, returns current instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.ISimpleSql.SetValues(System.Object[])">
+            <summary>
+            Sets the values, returns current instance.
+            </summary>
+            <param name="values">The values.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
         <member name="T:Simply.Crud.Interfaces.ITableAliasInfo">
             <summary>
             Defines the <see cref="T:Simply.Crud.Interfaces.ITableAliasInfo" />.
@@ -3401,6 +3246,13 @@
             <param name="isDistinct">if true column will be added as distinct, else just added.</param>
             <returns></returns>
         </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.AddSqlForSelect(Simply.Crud.Interfaces.ISimpleSql)">
+            <summary>
+            Adds the sql for select.
+            </summary>
+            <param name="simpleSql">The simple sql statement.</param>
+            <returns>A IWhere.</returns>
+        </member>
         <member name="M:Simply.Crud.Interfaces.IWhere`1.GetBaseCommand">
             <summary>
             Gets the database command.
@@ -3436,6 +3288,35 @@
             <summary>
             Gets Alias Info for table alias and use table name setting.
             </summary>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.StringCheck``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String,Simply.Crud.Enums.StringComparisonTypes,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Checks the String value.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="value">The value.</param>
+            <param name="stringComparison">The string comparison.</param>
+            <param name="conditionType">condition type (And-Or).</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.RangeCheck``2(System.Linq.Expressions.Expression{System.Func{`0,``0}},``1,``1,Simply.Crud.Enums.ConditionTypes,System.Boolean)">
+            <summary>
+            Checks property value in given range or not.
+            </summary>
+            <param name="keySelector">The key selector.</param>
+            <param name="firstLimit">The first Limit value.</param>
+            <param name="lastLimit">The last limit value.</param>
+            <param name="conditionType">The condition type.</param>
+            <param name="isBetweenOrNot">If true, is between or not.</param>
+            <returns>A IWhere object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Interfaces.IWhere`1.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to where condition.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IWhere instance.</returns>
         </member>
         <member name="T:Simply.Crud.Join.JoinBuilder`2">
             <summary>
@@ -3507,6 +3388,14 @@
             <param name="comparisonType">The comparison type.</param>
             <returns>A string.</returns>
         </member>
+        <member name="M:Simply.Crud.Join.JoinBuilder`2.AddSql(Simply.Crud.Interfaces.ISimpleSql,Simply.Crud.Enums.ConditionTypes)">
+            <summary>
+            Adds the sql statement to join statement.
+            </summary>
+            <param name="simpleSql">The simple sql.</param>
+            <param name="conditionType">The condition type.</param>
+            <returns>Returns current IJoinBuilder instance.</returns>
+        </member>
         <member name="T:Simply.Crud.Join.JoinBuilderFactory">
             <summary>
             The join builder factory.
@@ -3569,6 +3458,11 @@
             Gets or sets a value indicating whether is distinct.
             </summary>
         </member>
+        <member name="P:Simply.Crud.Objects.SimpleProperty.IsSql">
+            <summary>
+            Gets or sets a value indicating whether statement is sql.
+            </summary>
+        </member>
         <member name="P:Simply.Crud.Objects.SimpleProperty.TableAliasInfo">
             <summary>
             Gets, sets Alias Info for table alias and use table name setting.
@@ -3598,6 +3492,61 @@
             </summary>
             <param name="querySetting">Query Setting for building full column name.</param>
             <returns>returns string instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleProperty.New(System.String,System.String,System.Boolean,System.Boolean,Simply.Crud.Interfaces.ITableAliasInfo)">
+            <summary>
+            Create a new instance.
+            </summary>
+            <param name="propertyName">The property name.</param>
+            <param name="columnAlias">The column alias.</param>
+            <param name="isDistinct">If true, is distinct.</param>
+            <param name="isSql">If true, is sql.</param>
+            <param name="tableAlias">The table alias.</param>
+            <returns>Returns A SimpleProperty instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleProperty.SetEntityType(System.Type)">
+            <summary>
+            Sets the entity type and returns current instance.
+            </summary>
+            <param name="entityType">The entity type.</param>
+            <returns>Returns current instance.</returns>
+        </member>
+        <member name="T:Simply.Crud.Objects.SimpleSql">
+            <summary>
+            Defines the <see cref="T:Simply.Crud.Objects.SimpleSql" />.
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Objects.SimpleSql.Sql">
+            <summary>
+            Gets, sets sql text
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Objects.SimpleSql.Values">
+            <summary>
+            Gets, sets sql values
+            </summary>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.SetSql(System.String)">
+            <summary>
+            Sets the sql, returns current instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.SetValues(System.Object[])">
+            <summary>
+            Sets the values, returns current instance.
+            </summary>
+            <param name="values">The values.</param>
+            <returns>Returns current ISimpleSql instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.Objects.SimpleSql.New(System.String,System.Object[])">
+            <summary>
+            Creates news instance.
+            </summary>
+            <param name="sql">The sql.</param>
+            <param name="values">The values.</param>
+            <returns>Returns new ISimpleSql instance.</returns>
         </member>
         <member name="T:Simply.Crud.Objects.TableAliasInfo">
             <summary>
@@ -4050,16 +3999,6 @@
             Defines the <see cref="T:Simply.Crud.AsyncBulkCrudOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.AsyncBulkCrudOperator.InsertAndGetIdInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id Async With internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">Entity list for operation<see cref="T:System.Collections.Generic.List`1"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns execution result<see cref="!:System.Threading.Tasks.Task&lt;long&gt;"/>.</returns>
-        </member>
         <member name="M:Simply.Crud.AsyncBulkCrudOperator.InsertInternalAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts Async With internal Transaction.
@@ -4089,17 +4028,6 @@
             <param name="entityList">Entity list for operation<see cref="T:System.Collections.Generic.List`1"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns execution result<see cref="!:Task&lt;int&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.AsyncBulkCrudOperator.InsertAndGetIdAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id Async.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entityList">Entity list for operation<see cref="T:System.Collections.Generic.List`1"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns execution result<see cref="!:Task&lt;long&gt;"/>.</returns>
         </member>
         <member name="M:Simply.Crud.AsyncBulkCrudOperator.InsertAsync``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
             <summary>
@@ -4138,16 +4066,6 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns execution result<see cref="!:Task&lt;int&gt;"/>.</returns>
         </member>
-        <member name="M:Simply.Crud.AsyncCrudOperator.InsertAndGetIdInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id Async With internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns execution result<see cref="!:Task&lt;object&gt;"/>.</returns>
-        </member>
         <member name="M:Simply.Crud.AsyncCrudOperator.UpdateInternalAsync``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
             <summary>
             Updates Async With internal Transaction.
@@ -4178,17 +4096,6 @@
             <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns execution result<see cref="!:Task&lt;int&gt;"/>.</returns>
-        </member>
-        <member name="M:Simply.Crud.AsyncCrudOperator.InsertAndGetIdAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id Async.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">The entity <see cref="!:T"/>.</param>
-            <param name="transaction">The transaction <see cref="T:System.Data.IDbTransaction"/>.</param>
-            <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
-            <returns>Returns execution result<see cref="!:Task&lt;object&gt;"/>.</returns>
         </member>
         <member name="M:Simply.Crud.AsyncCrudOperator.UpdateAsync``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
             <summary>
@@ -4355,16 +4262,6 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.BulkCrudOperator.InsertAndGetIdInternal``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity and Get Id With internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entities">Entity list.</param>
-            <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
-            <returns>Returns execution result as int.</returns>
-        </member>
         <member name="M:Simply.Crud.BulkCrudOperator.Insert``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
             <summary>
             Inserts entity.
@@ -4409,17 +4306,6 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.BulkCrudOperator.InsertAndGetId``1(System.Data.IDbConnection,System.Collections.Generic.List{``0},System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entities">Entity list.</param>
-            <param name="transaction">(Optional) Database Transaction</param>
-            <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
-            <returns>Returns execution result as long.</returns>
-        </member>
         <member name="T:Simply.Crud.CrudOperator">
             <summary>
             Defines the <see cref="T:Simply.Crud.CrudOperator"/>.
@@ -4458,16 +4344,6 @@
         <member name="M:Simply.Crud.CrudOperator.InsertWithIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts With Id With internal Transaction.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">Entity instance.</param>
-            <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
-            <returns>Returns execution result as int.</returns>
-        </member>
-        <member name="M:Simply.Crud.CrudOperator.InsertAndGetIdInternal``1(System.Data.IDbConnection,``0,System.Nullable{System.Int32})">
-            <summary>
-            Inserts And Get Id With internal Transaction.
             </summary>
             <typeparam name="T">.</typeparam>
             <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
@@ -4518,17 +4394,6 @@
             <param name="transaction">(Optional) Database Transaction</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
-        </member>
-        <member name="M:Simply.Crud.CrudOperator.InsertAndGetId``1(System.Data.IDbConnection,``0,System.Data.IDbTransaction,System.Nullable{System.Int32})">
-            <summary>
-            Inserts entity And Get Id.
-            </summary>
-            <typeparam name="T">.</typeparam>
-            <param name="connection">Database Connection <see cref="T:System.Data.IDbConnection"/>.</param>
-            <param name="entity">Entity instance.</param>
-            <param name="transaction">(Optional) Database Transaction</param>
-            <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
-            <returns>Returns execution result as object.</returns>
         </member>
         <member name="M:Simply.Crud.CrudOperator.DeleteByIdList``1(System.Data.IDbConnection,System.Data.IDbTransaction,System.Nullable{System.Int32},System.Object[])">
             <summary>
@@ -4984,7 +4849,17 @@
         </member>
         <member name="F:Simply.Crud.Constants.DbCrudAppValues.OnString">
             <summary>
-            The on string
+            The "ON" string
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Constants.DbCrudAppValues.BetweenString">
+            <summary>
+            sql string "BETWEEN"
+            </summary>
+        </member>
+        <member name="F:Simply.Crud.Constants.DbCrudAppValues.NotBetweenString">
+            <summary>
+            sql string "NOT BETWEEN"
             </summary>
         </member>
         <member name="F:Simply.Crud.Constants.DbCrudAppValues.StandartQueryFormatForDelete">
@@ -5529,6 +5404,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="P:Simply.Crud.QueryType.BaseQueryTypeBuilder`1.DefinitorFactory">
             <summary>
@@ -5770,6 +5646,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.DeleteBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -5826,6 +5703,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.DeleteWhereIdInBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -5876,6 +5754,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
             <returns>Return an object instance which is implemented from IQueryTypeBuilder.</returns>
         </member>
         <member name="M:Simply.Crud.QueryType.QueryTypeBuilderFactory.GetBuilder``1(Simply.Crud.Enums.QueryTypes,Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
@@ -5884,6 +5763,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
             <returns>Return an object instance which is implemented from IQueryTypeBuilder.</returns>
         </member>
         <member name="T:Simply.Crud.QueryType.GetAllBuilder`1">
@@ -5897,6 +5777,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.GetAllBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -5947,6 +5828,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.GetByIdBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6003,6 +5885,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.GetByIdListBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6053,6 +5936,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.GetWhereIdInBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6103,6 +5987,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.InsertAndGetIdBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6165,7 +6050,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
-            <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.InsertBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6228,6 +6113,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.InsertWithIdBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6290,6 +6176,7 @@
             </summary>
             <param name="queryType">QueryTypes instance.</param>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.QueryType.UpdateBuilder`1.RebuildQuery(System.String)">
             <summary>
@@ -6346,11 +6233,12 @@
             Defines the <see cref="T:Simply.Crud.Query.BaseQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.BaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.BaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.BaseQueryBuilder"/> class.
             </summary>
             <param name="connectionType">DbConnectionTypes instance.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="P:Simply.Crud.Query.BaseQueryBuilder.ConnectionType">
             <summary>
@@ -6406,6 +6294,11 @@
         <member name="P:Simply.Crud.Query.BaseQueryBuilder.IsOledb">
             <summary>
             Gets or sets a value indicating whether IsOledb Defines connection is oledb connection.
+            </summary>
+        </member>
+        <member name="P:Simply.Crud.Query.BaseQueryBuilder.SimpleDefinitorFactory">
+            <summary>
+            Gets the simple definitor factory.
             </summary>
         </member>
         <member name="M:Simply.Crud.Query.BaseQueryBuilder.GetIdentityInsertFormat">
@@ -6530,16 +6423,22 @@
             </summary>
             <returns>The <see cref="T:System.String"/>.</returns>
         </member>
+        <member name="P:Simply.Crud.Query.IQueryBuilder.SimpleDefinitorFactory">
+            <summary>
+            Gets the simple definitor factory.
+            </summary>
+        </member>
         <member name="T:Simply.Crud.Query.DB2QueryBuilder">
             <summary>
             Defines the <see cref="T:Simply.Crud.Query.DB2QueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.DB2QueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.DB2QueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.DB2QueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.DB2QueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6552,30 +6451,33 @@
             Defines the <see cref="T:Simply.Crud.Query.QueryBuilderFactory"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.QueryBuilderFactory.GetQueryBuilder(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.QueryBuilderFactory.GetQueryBuilder(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Gets Query Builder instance for given connection type.
             </summary>
             <param name="connectionType">DbConnectionTypes instance.</param>
             <returns>Return an object instance which is implemented from IQueryBuilder.</returns>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
-        <member name="M:Simply.Crud.Query.QueryBuilderFactory.BuildQueryBuilder(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.QueryBuilderFactory.BuildQueryBuilder(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Builds Query Builder instance for given connection type.
             </summary>
             <param name="connectionType">DbConnectionTypes instance.</param>
             <returns>Return an object instance which is implemented from IQueryBuilder.</returns>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="T:Simply.Crud.Query.FirebirdQueryBuilder">
             <summary>
             Defines the <see cref="T:Simply.Crud.Query.FirebirdQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.FirebirdQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.FirebirdQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.FirebirdQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.FirebirdQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6588,11 +6490,12 @@
             Defines the <see cref="T:Simply.Crud.Query.MsSqlQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.MsSqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.MsSqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.MsSqlQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.MsSqlQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6605,11 +6508,12 @@
             Defines the <see cref="T:Simply.Crud.Query.MySqlQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.MySqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.MySqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.MySqlQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.MySqlQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6622,11 +6526,12 @@
             Defines the <see cref="T:Simply.Crud.Query.NuoDbQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.NuoDbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.NuoDbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.NuoDbQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.NuoDbQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6639,11 +6544,12 @@
             Defines the <see cref="T:Simply.Crud.Query.OdbcQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.OdbcQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.OdbcQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.OdbcQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.OdbcQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6656,11 +6562,12 @@
             Defines the <see cref="T:Simply.Crud.Query.OledbQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.OledbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.OledbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.OledbQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.OledbQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6673,11 +6580,12 @@
             Defines the <see cref="T:Simply.Crud.Query.OracleQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.OracleQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.OracleQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.OracleQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.OracleQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6690,11 +6598,12 @@
             Defines the <see cref="T:Simply.Crud.Query.PgSqlQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.PgSqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.PgSqlQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.PgSqlQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.PgSqlQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6707,11 +6616,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SqlBaseQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SqlBaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SqlBaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SqlBaseQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SqlBaseQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6724,11 +6634,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SqlCEQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SqlCEQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SqlCEQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SqlCEQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SqlCEQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6741,11 +6652,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SqlDatabaseQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SqlDatabaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SqlDatabaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SqlDatabaseQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SqlDatabaseQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6758,11 +6670,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SQLiteQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SQLiteQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SQLiteQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SQLiteQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SQLiteQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6775,11 +6688,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SybaseQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SybaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SybaseQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SybaseQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SybaseQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6792,11 +6706,12 @@
             Defines the <see cref="T:Simply.Crud.Query.SynergyQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.SynergyQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.SynergyQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.SynergyQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.SynergyQueryBuilder.GetIdentityInsertFormat">
             <summary>
@@ -6809,11 +6724,12 @@
             Defines the <see cref="T:Simply.Crud.Query.VistaDbQueryBuilder"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.Query.VistaDbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes)">
+        <member name="M:Simply.Crud.Query.VistaDbQueryBuilder.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory)">
             <summary>
             Initializes a new instance of the <see cref="T:Simply.Crud.Query.VistaDbQueryBuilder"/> class.
             </summary>
             <param name="connectionType">Connection type <see cref="T:Simply.Data.Enums.DbConnectionTypes"/>.</param>
+            <param name="simpleDefinitorFactory">simple definitor factory instance.</param>
         </member>
         <member name="M:Simply.Crud.Query.VistaDbQueryBuilder.GetIdentityInsertFormat">
             <summary>
