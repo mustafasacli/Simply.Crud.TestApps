@@ -397,7 +397,7 @@
             <param name="instance"></param>
             <returns></returns>
         </member>
-        <member name="M:Simply.Common.GenericExtensions.With``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Object)">
+        <member name="M:Simply.Common.GenericExtensions.With``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1)">
             <summary>
             Sets the given property value and returns current instance.
             </summary>
@@ -411,6 +411,7 @@
         <member name="M:Simply.Common.GenericExtensions.DeepClone``1(``0)">
             <summary>
             Creates a Deep clone of given object instance.
+            Class and other classes which property of T, must have system.serializable attribute.
             </summary>
             <param name="instance">object instance.</param>
             <returns>Returns a new instance.</returns>
@@ -595,6 +596,14 @@
             <param name="row">The row.</param>
             <param name="columnPropertyMappings">The column property mappings.</param>
         </member>
+        <member name="M:Simply.Common.SimpleDbRowExtensions.ConvertTo``1(Simply.Common.Objects.SimpleDbRow,System.Func{Simply.Common.Objects.SimpleDbRow,``0})">
+            <summary>
+            Converts simpledbrow instance to T type instance with given convert function.
+            </summary>
+            <param name="row">simple db row instance.</param>
+            <param name="convertFunc">The convert func.</param>
+            <returns>Returns a T instance.</returns>
+        </member>
         <member name="T:Simply.Common.SimpleTypeExtensions">
             <summary>
             Defines the <see cref="!:TypeExtensions"/>.
@@ -687,11 +696,13 @@
             <param name="text">The s to act on.</param>
             <returns>An int.</returns>
         </member>
-        <member name="M:Simply.Common.StringExtension.TrimAll(System.String)">
+        <member name="M:Simply.Common.StringExtension.TrimAll(System.String,System.Boolean,System.Boolean)">
             <summary>
             The Trim All spaces.
             </summary>
             <param name="text">The s to act on.</param>
+            <param name="trimNewLine">if true trims new line chars.</param>
+            <param name="trimTabs">if true trims tab chars.</param>
             <returns>A string.</returns>
         </member>
         <member name="M:Simply.Common.StringExtension.FirstIndexOf(System.String,System.Char)">
