@@ -1,11 +1,9 @@
 ﻿using Mst.Dexter.Factory;
 using SI.Test.Entities;
 using Simply.Crud;
-using Simply.Crud.DatabaseExtensions;
 using Simply.Data;
 using Simply.Data.Database;
 using Simply.Data.Interfaces;
-using SimplyCrud_TestDb_MySql;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

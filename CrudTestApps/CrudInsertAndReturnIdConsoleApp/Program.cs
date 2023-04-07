@@ -1,5 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using Simply.Crud.DatabaseExtensions;
+using Simply.Crud;
 using Simply.Data.Database;
 using Simply.Data.Interfaces;
 using SimplyCrud.Project.Entites;
