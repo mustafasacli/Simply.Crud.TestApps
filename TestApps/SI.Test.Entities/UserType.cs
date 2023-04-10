@@ -7,6 +7,7 @@
     /// <summary>
     /// Defines the <see cref="UserType"/>.
     /// </summary>
+    [Table("user_type", Schema = "public")]
     public partial class UserType
     {
         /// <summary>
@@ -22,6 +23,7 @@
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("id")]
         public int Id
         { get; set; }
 
@@ -30,12 +32,14 @@
         /// </summary>
         [Required]
         [StringLength(50)]
+        [Column("type_name")]
         public string TypeName
         { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether IsActive.
         /// </summary>
+        [Column("is_active")]
         public bool IsActive
         { get; set; }
 

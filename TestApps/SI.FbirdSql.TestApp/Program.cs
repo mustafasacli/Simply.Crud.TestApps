@@ -1,5 +1,5 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
-using Simply.Crud.DatabaseExtensions;
+using Simply.Crud;
 using Simply.Data.Database;
 using Simply.Data.Interfaces;
 using System;
