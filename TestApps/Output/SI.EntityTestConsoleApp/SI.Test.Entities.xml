@@ -189,6 +189,11 @@
             Gets or sets the update time.
             </summary>
         </member>
+        <member name="P:SI.Test.Entities.User.UserTypeName">
+            <summary>
+            Gets or sets the user type name.
+            </summary>
+        </member>
         <member name="P:SI.Test.Entities.User.LogEntries">
             <summary>
             Gets or sets the LogEntries.

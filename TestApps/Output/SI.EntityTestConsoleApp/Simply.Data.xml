@@ -5040,5 +5040,19 @@
             <param name="includeComputedProperties"></param>
             <returns>The columns.</returns>
         </member>
+        <member name="M:Simply.Definitor.Attribute.AttributeDefinitor`1.GetTableNameOfType(System.Type)">
+            <summary>
+            Gets Table Name of type.
+            </summary>
+            <param name="type">The type to act on.</param>
+            <returns>The table name of type.</returns>
+        </member>
+        <member name="M:Simply.Definitor.Attribute.AttributeDefinitor`1.GetSchemaNameOfType(System.Type)">
+            <summary>
+            Gets Schema Name of type.
+            </summary>
+            <param name="type">The type to act on.</param>
+            <returns>The schema name of type.</returns>
+        </member>
     </members>
 </doc>

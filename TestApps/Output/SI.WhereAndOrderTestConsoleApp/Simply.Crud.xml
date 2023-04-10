@@ -2723,6 +2723,18 @@
             <param name="querySetting">Query Setting instance(Optional).</param>
             <returns>Returns IWhere instance.</returns>
         </member>
+        <member name="M:Simply.Crud.SimpleDatabaseOperator.BuildJoin``2(Simply.Data.Interfaces.ISimpleDatabase,Simply.Crud.Enums.JoinTypes,Simply.Crud.Interfaces.ITableAliasInfo,Simply.Crud.Interfaces.ITableAliasInfo,Simply.Common.Interfaces.ISimpleDefinitor{``0},Simply.Common.Interfaces.ISimpleDefinitor{``1})">
+            <summary>
+            Builds the join.
+            </summary>
+            <param name="database">database instance.</param>
+            <param name="joinType">The join type.</param>
+            <param name="sourceTableAlias">The source table alias.</param>
+            <param name="destinationTableAlias">The destination table alias.</param>
+            <param name="simpleDefinitor1">Simmple Definitor for table-class, column-property mapping.</param>
+            <param name="simpleDefinitor2">Simmple Definitor for table-class, column-property mapping.</param>
+            <returns>A IJoinBuilder.</returns>
+        </member>
         <member name="T:Simply.Crud.SimpleDbRowGetOperator">
             <summary>
             Defines the <see cref="T:Simply.Crud.SimpleDbRowGetOperator"/>.
@@ -3514,6 +3526,7 @@
             Gets Column Name from Property Name and Entity Type.
             </summary>
             <param name="querySetting">Query Setting for building full column name.</param>
+            <param name="simpleDefinitor">Simmple Definitor for table-class, column-property mapping.</param>
             <returns>returns string instance.</returns>
         </member>
         <member name="M:Simply.Crud.Objects.SimpleProperty.New(System.String,System.String,System.Boolean,System.Boolean,Simply.Crud.Interfaces.ITableAliasInfo)">

@@ -2039,7 +2039,7 @@
             Creates new instance.
             </summary>
             <typeparam name="T"></typeparam>
-            <param name="database">database connection.</param>
+            <param name="database">database.</param>
             <param name="tableAliasInfo">Table Alias Info for table alias and use table name setting.</param>
             <param name="querySetting">Query Setting instance(Optional).</param>
             <returns>Returns IWhere instance.</returns>
@@ -2136,12 +2136,12 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns as SimpleDbRow array.</returns>
         </member>
-        <member name="T:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator">
+        <member name="T:Simply.Crud.AsyncDbBulkCrudOperator">
             <summary>
-            Defines the <see cref="T:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator"/>.
+            Defines the <see cref="T:Simply.Crud.AsyncDbBulkCrudOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator.InsertAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbBulkCrudOperator.InsertAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list with the asynchronous operation.
             </summary>
@@ -2151,7 +2151,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator.UpdateAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbBulkCrudOperator.UpdateAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Updates entity list with the asynchronous operation.
             </summary>
@@ -2161,7 +2161,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Updates entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator.DeleteAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbBulkCrudOperator.DeleteAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Deletes entity list with the asynchronous operation.
             </summary>
@@ -2171,7 +2171,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Deletes entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator.InsertWithIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbBulkCrudOperator.InsertWithIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list with identity property with the asynchronous operation.
             </summary>
@@ -2181,7 +2181,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record with identity and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbBulkCrudOperator.InsertAndGetIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbBulkCrudOperator.InsertAndGetIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts And Get Id Async.
             </summary>
@@ -2191,12 +2191,12 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns execution result<see cref="!:Task&lt;long&gt;"/>.</returns>
         </member>
-        <member name="T:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator">
+        <member name="T:Simply.Crud.AsyncDbCrudOperator">
             <summary>
             Defines the <see cref="T:Simply.Crud.AsyncCrudOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator.InsertAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbCrudOperator.InsertAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity with the asynchronous operation.
             </summary>
@@ -2206,7 +2206,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator.UpdateAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbCrudOperator.UpdateAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Updates entity with the asynchronous operation.
             </summary>
@@ -2216,7 +2216,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Updates entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator.DeleteAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbCrudOperator.DeleteAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Deletes entity with the asynchronous operation.
             </summary>
@@ -2226,7 +2226,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Deletes entity record and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator.InsertWithIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbCrudOperator.InsertWithIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity with identity property with the asynchronous operation.
             </summary>
@@ -2236,7 +2236,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record with identity and returns affected row count as task result.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.AsyncDbCrudOperator.InsertAndGetIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.AsyncDbCrudOperator.InsertAndGetIdAsync``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts And Get Id Async.
             </summary>
@@ -2246,12 +2246,12 @@
             <param name="commandTimeout">DbCommand timeout <see cref="!:System.Nullable&lt;int&gt;"/>.</param>
             <returns>Returns execution result<see cref="!:Task&lt;object&gt;"/>.</returns>
         </member>
-        <member name="T:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator">
+        <member name="T:Simply.Crud.DbBulkCrudOperator">
             <summary>
-            Defines the <see cref="T:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator"/>.
+            Defines the <see cref="T:Simply.Crud.DbBulkCrudOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator.Insert``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbBulkCrudOperator.Insert``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list.
             </summary>
@@ -2261,7 +2261,7 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator.Update``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbBulkCrudOperator.Update``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Updates entity list.
             </summary>
@@ -2271,7 +2271,7 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator.Delete``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbBulkCrudOperator.Delete``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Deletes entity list.
             </summary>
@@ -2281,7 +2281,7 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator.InsertWithId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbBulkCrudOperator.InsertWithId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts entity list with identity property.
             </summary>
@@ -2291,7 +2291,7 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as int.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbBulkCrudOperator.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbBulkCrudOperator.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,System.Collections.Generic.List{``0},System.Nullable{System.Int32})">
             <summary>
             Inserts And Get Id.
             </summary>
@@ -2301,12 +2301,12 @@
             <param name="commandTimeout">(Optional) DbCommand timeout value.</param>
             <returns>Returns execution result as long.</returns>
         </member>
-        <member name="T:Simply.Crud.DatabaseExtensions.DbCrudOperator">
+        <member name="T:Simply.Crud.DbCrudOperator">
             <summary>
-            Defines the <see cref="T:Simply.Crud.DatabaseExtensions.DbCrudOperator"/>.
+            Defines the <see cref="T:Simply.Crud.DbCrudOperator"/>.
             </summary>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbCrudOperator.Insert``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbCrudOperator.Insert``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts the specified entity.
             </summary>
@@ -2316,7 +2316,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record and returns affected row count.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbCrudOperator.Update``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbCrudOperator.Update``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Updates the specified entity.
             </summary>
@@ -2326,7 +2326,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Updates entity record and returns affected row count.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbCrudOperator.Delete``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbCrudOperator.Delete``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Deletes the specified entity.
             </summary>
@@ -2336,7 +2336,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Deletes entity record and returns affected row count.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbCrudOperator.InsertWithId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbCrudOperator.InsertWithId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts with identifier.
             </summary>
@@ -2346,7 +2346,7 @@
             <param name="commandTimeout">The command timeout.</param>
             <returns>Inserts entity record with identifier and returns affected row count.</returns>
         </member>
-        <member name="M:Simply.Crud.DatabaseExtensions.DbCrudOperator.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
+        <member name="M:Simply.Crud.DbCrudOperator.InsertAndGetId``1(Simply.Data.Interfaces.ISimpleDatabase,``0,System.Nullable{System.Int32})">
             <summary>
             Inserts entity And Get Id.
             </summary>
@@ -2699,6 +2699,41 @@
             <param name="whereClause">where clause for update</param>
             <param name="commandTimeout">(Optional) DbCommand timeout value. </param>
             <returns>Returns execution result as int.</returns>
+        </member>
+        <member name="T:Simply.Crud.SimpleDatabaseOperator">
+            <summary>
+            Defines the <see cref="T:Simply.Crud.SimpleDatabaseOperator"/>.
+            </summary>
+        </member>
+        <member name="M:Simply.Crud.SimpleDatabaseOperator.Order``1(Simply.Data.Interfaces.ISimpleDatabase,Simply.Crud.Interfaces.ITableAliasInfo)">
+            <summary>
+            Create IOrderBuilder instance for given database.
+            </summary>
+            <param name="database">The database instance.</param>
+            <param name="tableAliasInfo">Table Alias Info for table alias and use table name setting.</param>
+            <returns>Returns IOrderBuilder object instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDatabaseOperator.Where``1(Simply.Data.Interfaces.ISimpleDatabase,Simply.Crud.Interfaces.ITableAliasInfo,Simply.Data.Interfaces.IQuerySetting)">
+            <summary>
+            Create IWhere{T} instance for given database.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="database">database instance.</param>
+            <param name="tableAliasInfo">Table Alias Info for table alias and use table name setting.</param>
+            <param name="querySetting">Query Setting instance(Optional).</param>
+            <returns>Returns IWhere instance.</returns>
+        </member>
+        <member name="M:Simply.Crud.SimpleDatabaseOperator.BuildJoin``2(Simply.Data.Interfaces.ISimpleDatabase,Simply.Crud.Enums.JoinTypes,Simply.Crud.Interfaces.ITableAliasInfo,Simply.Crud.Interfaces.ITableAliasInfo,Simply.Common.Interfaces.ISimpleDefinitor{``0},Simply.Common.Interfaces.ISimpleDefinitor{``1})">
+            <summary>
+            Builds the join.
+            </summary>
+            <param name="database">database instance.</param>
+            <param name="joinType">The join type.</param>
+            <param name="sourceTableAlias">The source table alias.</param>
+            <param name="destinationTableAlias">The destination table alias.</param>
+            <param name="simpleDefinitor1">Simmple Definitor for table-class, column-property mapping.</param>
+            <param name="simpleDefinitor2">Simmple Definitor for table-class, column-property mapping.</param>
+            <returns>A IJoinBuilder.</returns>
         </member>
         <member name="T:Simply.Crud.SimpleDbRowGetOperator">
             <summary>
@@ -3491,6 +3526,7 @@
             Gets Column Name from Property Name and Entity Type.
             </summary>
             <param name="querySetting">Query Setting for building full column name.</param>
+            <param name="simpleDefinitor">Simmple Definitor for table-class, column-property mapping.</param>
             <returns>returns string instance.</returns>
         </member>
         <member name="M:Simply.Crud.Objects.SimpleProperty.New(System.String,System.String,System.Boolean,System.Boolean,Simply.Crud.Interfaces.ITableAliasInfo)">
@@ -5006,6 +5042,11 @@
             The query setting.
             </value>
         </member>
+        <member name="P:Simply.Crud.Ordering.IOrderBuilder`1.TableAlias">
+            <summary>
+            Gets Alias Info for table alias and use table name setting.
+            </summary>
+        </member>
         <member name="P:Simply.Crud.Ordering.IOrderBuilder`1.Orders">
             <summary>
             Gets the orders.
@@ -5044,13 +5085,14 @@
              <typeparam name="T"></typeparam>
              <seealso cref="T:Simply.Crud.Ordering.IOrderBuilder`1" />
         </member>
-        <member name="M:Simply.Crud.Ordering.OrderBuilder`1.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory,Simply.Data.Interfaces.IQuerySetting)">
+        <member name="M:Simply.Crud.Ordering.OrderBuilder`1.#ctor(Simply.Data.Enums.DbConnectionTypes,Simply.Common.Interfaces.ISimpleDefinitorFactory,Simply.Data.Interfaces.IQuerySetting,Simply.Crud.Interfaces.ITableAliasInfo)">
             <summary>
             Initializes a new instance of the <see cref="!:WhereBuilder&lt;T&gt;"/> class.
             </summary>
             <param name="dbConnectionType">Type of the database connection.</param>
             <param name="simpleDefinitorFactory">definitor factory instance for create definitor.</param>
             <param name="querySetting">Query Setting instance(Optional).</param>
+            <param name="tableAliasInfo">table alias info.</param>
         </member>
         <member name="P:Simply.Crud.Ordering.OrderBuilder`1.DbConnectionType">
             <summary>
@@ -5067,6 +5109,11 @@
             <value>
             The query setting.
             </value>
+        </member>
+        <member name="P:Simply.Crud.Ordering.OrderBuilder`1.TableAlias">
+            <summary>
+            Gets Alias Info for table alias and use table name setting.
+            </summary>
         </member>
         <member name="P:Simply.Crud.Ordering.OrderBuilder`1.Orders">
             <summary>
