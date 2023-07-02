@@ -1,12 +1,13 @@
+using BookmarksStocker.DAO;
 using BookmarksStocker.Source;
 using BookmarksStocker.Source.Business.Interfaces;
 using BookmarksStocker.Source.Entity;
 using BookmarksStocker.Source.ViewModel;
-using Simply.Common;
-using Simply.Crud;
-using Simply.Data;
 using SimpleInfra.Common.Response;
 using SimpleInfra.Validation;
+using Simply.Common;
+using Simply.Crud;
+using Simply.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace BrowsersStocker.Source.Business
         /// <summary>
         /// The Creates entity for BrowsersViewModel.
         /// </summary>
-        /// <param name="viewModel">The viewModel <see cref="BrowsersViewModel"/>.</param>
+        /// <param name="model">The viewModel <see cref="BrowsersViewModel"/>.</param>
         /// <returns>The <see cref="SimpleResponse{BrowsersViewModel}"/>.</returns>
         public SimpleResponse<BrowsersViewModel> Create(BrowsersViewModel model)
         {
@@ -47,7 +48,7 @@ namespace BrowsersStocker.Source.Business
                     };
                 }
 
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     var entity = Map<BrowsersViewModel, Browsers>(model);
                     var returnValue = context.InsertAndGetId(entity);
@@ -80,11 +81,11 @@ namespace BrowsersStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     var entity = context.FirstOrDefault<Browsers>(q => q.Id == id);
 
-                    if (entity == null || entity == default(Browsers))
+                    if (entity == null)
                     {
                         response.ResponseCode = BusinessResponseValues.NullEntityValue;
                         response.ResponseMessage = "Kayýt bulunamadý.";
@@ -108,7 +109,7 @@ namespace BrowsersStocker.Source.Business
         /// <summary>
         /// Updates entity for BrowsersViewModel.
         /// </summary>
-        /// <param name="viewModel">The viewModel <see cref="BrowsersViewModel"/>.</param>
+        /// <param name="model">The viewModel <see cref="BrowsersViewModel"/>.</param>
         /// <returns>The <see cref="SimpleResponse"/>.</returns>
         public SimpleResponse Update(BrowsersViewModel model)
         {
@@ -126,10 +127,10 @@ namespace BrowsersStocker.Source.Business
                     };
                 }
 
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     var entity = context.Select<Browsers>(q => q.Id == model.Id).FirstOrDefault();
-                    if (entity == null || entity == default(Browsers))
+                    if (entity == null)
                     {
                         response.ResponseCode = BusinessResponseValues.NullEntityValue;
                         response.ResponseMessage = "Kayýt bulunamadý.";
@@ -137,7 +138,6 @@ namespace BrowsersStocker.Source.Business
                     }
 
                     MapTo(model, entity);
-                    // context.Browsers.Attach(entity); context.Entry(entity).State = EntityState.Modified;
                     response.ResponseCode = context.Update(entity);
                 }
             }
@@ -162,15 +162,14 @@ namespace BrowsersStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
-                        context.OpenIfNot();
-                        response.ResponseCode = context.DeleteByIdList<Browsers>(idValues: new object[] { model.Id });
+                        response.ResponseCode = context.DeleteAll<Bookmarks>(q => q.Id == model.Id);
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -193,9 +192,9 @@ namespace BrowsersStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
-                    response.ResponseCode = context.DeleteByIdList<Browsers>(idValues: new object[] { id });
+                    response.ResponseCode = context.DeleteAll<Bookmarks>(q => q.Id == id);
                 }
             }
             catch (Exception ex)
@@ -218,7 +217,7 @@ namespace BrowsersStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     var entities = context.GetAll<Browsers>();
                     response.Data = MapList<Browsers, BrowsersViewModel>(entities);

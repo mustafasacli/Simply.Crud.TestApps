@@ -49,9 +49,8 @@ namespace BookmarksStocker.Source.Views
                 if (cmbxSearchType.Items.Count > 0)
                     cmbxSearchType.SelectedIndex = 0;
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Ctor");
 
@@ -71,9 +70,8 @@ namespace BookmarksStocker.Source.Views
                 bkrmrk.BookmarkChanged += new FrmBookmark.BookmarkChange(this.BkmrkChanged);
                 bkrmrk.ShowDialog();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Add");
             }
@@ -118,9 +116,8 @@ namespace BookmarksStocker.Source.Views
 
                 SetDataSourceOfGRid();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "BkmrkChanged");
             }
@@ -186,9 +183,8 @@ namespace BookmarksStocker.Source.Views
                     }
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Delete");
 
@@ -217,9 +213,8 @@ namespace BookmarksStocker.Source.Views
 
                 SetDataSourceOfGRid();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "FormLoad");
 
@@ -276,9 +271,8 @@ namespace BookmarksStocker.Source.Views
                     bkrmrk.ShowDialog();
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "Update");
 
@@ -325,9 +319,8 @@ namespace BookmarksStocker.Source.Views
                     frw.ShowDialog();
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "RunWithForm");
 
@@ -376,9 +369,8 @@ namespace BookmarksStocker.Source.Views
             {
                 isCreationToggle = (sender as RadioButton).Tag.ToInt();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 isCreationToggle = 0;
                 // FreeLogger.LogMethod(ex, this.Name, "IsCreationtimeToggleChanged");
@@ -399,9 +391,8 @@ namespace BookmarksStocker.Source.Views
             {
                 isStartToggle = (sender as RadioButton).Tag.ToInt();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 isStartToggle = 0;
                 // FreeLogger.LogMethod(ex, this.Name, "IsStartToggleChanged");
@@ -587,9 +578,8 @@ namespace BookmarksStocker.Source.Views
                     txtDetails.Text = strBuilder.ToString();
                 }
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "grdVwBookmarks_SelectionChanged");
             }
@@ -621,9 +611,8 @@ namespace BookmarksStocker.Source.Views
                 //}
                 //exportMan.Export2Excel(dt2Export, "Bookmarks", "D:/Bookmarks.xls");
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "ExportToExcel");
                 MessageUtil.Error("Export Operation failed");
@@ -669,9 +658,8 @@ namespace BookmarksStocker.Source.Views
 
                 exportMan.Export2Excel(dt2Export, "Bookmarks", "D:/Bookmarks.xls");
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 // FreeLogger.LogMethod(ex, this.Name, "ExportToExcel");
                 MessageUtil.Error("Export Operation failed");
@@ -734,9 +722,8 @@ namespace BookmarksStocker.Source.Views
                 shortCut.IconLocation = Application.StartupPath + @"\monitor.ico";
                 shortCut.Save();
             }
-#pragma warning disable CS0168 // The variable 'ex' is declared but never used
             catch (Exception ex)
-#pragma warning restore CS0168 // The variable 'ex' is declared but never used
+
             {
                 MessageUtil.Error("Shortcut could not be created.");
                 // FreeLogger.LogMethod(ex, this.Name, "CreateShortCut");

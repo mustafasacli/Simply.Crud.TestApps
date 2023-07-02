@@ -1,36 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using Simply.Data;
-using System.Collections;
+﻿using MySql.Data.MySqlClient;
+using Simply.Common;
+using Simply.Crud;
+using Simply.Data.Interfaces;
 using SimplyCrud.Project.Entites;
 using SimplyCrud.Project.Entity;
-using Simply.Crud;
+using SimplyCrud_TestDb_MySql;
+using System;
+using System.Collections.Generic;
 using System.Configuration;
-using Simply.Common;
-using Simply.Data.Interfaces;
+using System.Data;
 
 namespace BulkInsertAndReturnIdConsoleApp
 {
     internal class Program
     {
         private static readonly EntityBuilder entityBuilder = new EntityBuilder();
+
         internal static IDbConnection GetDbConnection()
         {
             return new MySqlConnection { ConnectionString = "data source=127.0.0.1;initial catalog=crud_test_db;user id=root;" };
         }
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             int entityCountForInsertAndReturnId =
                 ConfigurationManager.AppSettings["entityCountForInsertAndReturnId"].ToIntNullable() ?? 0;
@@ -48,15 +39,14 @@ namespace BulkInsertAndReturnIdConsoleApp
             }
 
             IDbCommandResult<object[]> result;
-            using (IDbConnection connection = GetDbConnection())
+            using (ISimpleDatabase connection = new SimpleMySqlDatabase())
             {
                 try
                 {
-                    result = connection.OpenAnd()
-                       .InsertAndGetId(persons);
+                    result = connection.InsertAndGetId(persons);
                 }
                 finally
-                { connection.CloseIfNot(); }
+                { connection.Close(); }
             }
 
             Console.WriteLine("ExecutionResult: " + result?.ExecutionResult);

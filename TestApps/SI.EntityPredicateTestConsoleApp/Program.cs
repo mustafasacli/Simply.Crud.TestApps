@@ -69,7 +69,6 @@ namespace SI.EntityPredicateTestConsoleApp
                 && !p.LastName.Contains("Ety") && p.CreationDate < p.UpdateTime && p.FirstName.Contains("Ali")
                 && p.FirstName.Substring(4, 3) == "Ali")
                 .AddListContainsCondition(ConditionTypes.And, p => p.UserType, new int[] { 2, 4 })
-
                 //.AddAndCondition(p => p.FirstName.Contains("Ali"))
                 //.AddAndCondition(p => p.FirstName.Substring(4, 3) == "Ali")
                 //.AddAndCondition(u => u.CreationDate < u.UpdateTime)
@@ -87,6 +86,33 @@ namespace SI.EntityPredicateTestConsoleApp
             /**
              * SELECT t1.Id AS UserId, t1.FirstName, t1.LastName FROM public.user t1 WHERE ( ( ( (t1.IsActive = @p0) ) AND ( t1.UserType IN ( @p1, @p2 ) ) ) AND ( (FirstName LIKE '%'  +  @p3  +  '%' = @p4) ) ) AND ( (t1.FirstName = SUBSTR(FirstName, 4, 3) = @p5) )
              *
+             */
+
+            /** 
+             * SELECT t1.id AS UserId, t1.first_name, t1.last_name, user_type.type_name AS UserTypeName FROM public.user t1 
+             * LEFT JOIN public.user_type ON user.user_type = user_type.id 
+             * WHERE ( t1.is_active = ? AND t1.is_deleted = ? AND  NOT t1.last_name LIKE '%'  ||  ?  ||  '%' AND t1.created_on < t1.updated_on AND t1.first_name LIKE '%'  ||  ?  ||  '%' AND SUBSTR(t1.first_name, 4, 3) = ?   ) AND ( t1.user_type IN ( ?, ? ) ) ORDER BY t1.created_on ASC
+             */
+
+            /*
+             SELECT t1.id AS UserId, t1.first_name, t1.last_name, user_type.type_name AS UserTypeName FROM public.user t1
+ LEFT JOIN public.user_type ON user.user_type = user_type.id
+ WHERE ( t1.is_active = ? AND t1.is_deleted = ? AND  NOT t1.last_name LIKE '%'  ||  ?  ||  '%' AND t1.created_on < t1.updated_on AND t1.first_name LIKE '%'  ||  ?  ||  '%' AND SUBSTR(t1.first_name, 4, 3) = ?   ) AND ( t1.user_type IN ( ?, ? ) )
+ ORDER BY t1.created_on ASC
+
+            SELECT t1.id AS UserId, t1.first_name, t1.last_name, user_type.type_name AS UserTypeName FROM public.user t1
+ LEFT JOIN public.user_type ON user.user_type = user_type.id
+ WHERE
+ ( t1.is_active = ? AND t1.is_deleted = ? AND  NOT t1.last_name LIKE '%'  ||  ?  ||  '%' AND t1.created_on < t1.updated_on AND t1.first_name LIKE '%'  ||  ?  ||  '%' AND SUBSTR(t1.first_name, 4, 3) = ?   ) AND ( t1.user_type IN ( ?, ? ) )
+ ORDER BY t1.created_on ASC
+             */
+
+            /*
+             SELECT t1.id AS UserId, t1.first_name, t1.last_name, user_type.type_name AS UserTypeName FROM public.user t1
+ LEFT JOIN public.user_type ON user.user_type = user_type.id
+ WHERE
+ ( t1.is_active = ? AND t1.is_deleted = ? AND  NOT t1.last_name LIKE '%'  ||  ?  ||  '%' AND t1.created_on < t1.updated_on AND t1.first_name LIKE '%'  ||  ?  ||  '%' AND SUBSTR(t1.first_name, 4, 3) = ?   ) AND ( t1.user_type IN ( ?, ? ) )
+ ORDER BY t1.created_on ASC
              */
             var cmdDefinition = builder.GetCommand(includeOrder: true);
             Console.Write(cmdDefinition.CommandText);

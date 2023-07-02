@@ -1,19 +1,22 @@
-﻿using Simply.Crud;
-using Simply.Data;
-using FirebirdSql.Data.FirebirdClient;
+﻿using FirebirdSql.Data.FirebirdClient;
+using Simply.Crud;
+using Simply.Data.Database;
+using Simply.Data.Interfaces;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SI.FbirdSql.TestApp
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            FbConnection conn = new FbConnection();
-            conn.ConnectionString = @"User=SYSDBA;Password=123456;Database=C:\Depo\dev_progs\sql\db_3_0\examples.fdb;DataSource=localhost;Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType = 0;";
-            /*
+            string connectionString = @"User=SYSDBA;Password=123456;Database=C:\Depo\dev_progs\sql\db_3_0\examples.fdb;DataSource=localhost;Port=3050;Dialect=3;Charset=NONE;Role=;Connection lifetime=15;Pooling=true;MinPoolSize=0;MaxPoolSize=50;Packet Size=8192;ServerType = 0;";
+
+            using (ISimpleDatabase database = new SimpleDatabase(
+                SimpleDatabase.Create<FbConnection>(connectionString)))
+            { /*
             var usr = new users
             {
                 name = "Mustafa Saçlı",
@@ -24,25 +27,25 @@ namespace SI.FbirdSql.TestApp
             usr.created_at = DateTime.Now;
             usr.updated_at = DateTime.Now;
             */
-            var invoice = new Invoice
-            {
-                CustomerId = 50,
-                InvoiceDate = DateTime.Now,
-                Paid = 1,
-                TotalSale = 100.65M
-            };
-            conn.OpenIfNot();
-            var result = conn.InsertAndGetId(invoice);
-            Console.WriteLine(result);
-            conn.CloseIfNot();
+                var invoice = new Invoice
+                {
+                    CustomerId = 50,
+                    InvoiceDate = DateTime.Now,
+                    Paid = 1,
+                    TotalSale = 100.65M
+                };
+                var result = database.InsertAndGetId(invoice);
+                Console.WriteLine(result);
+                database.Close();
+            }
+
             Console.ReadKey();
         }
     }
 
-    class users
+    internal class users
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id
         { get; set; }
 
@@ -66,7 +69,7 @@ namespace SI.FbirdSql.TestApp
     }
 
     [Table("INVOICE")]
-    class Invoice
+    internal class Invoice
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

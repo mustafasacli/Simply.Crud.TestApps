@@ -9,7 +9,7 @@
             
              <remarks>   Msacli, 22.04.2019. </remarks>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(``0,System.Boolean)">
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(``0,System.Boolean,System.Boolean)">
              <summary>   A TSource extension method that maps the given source. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
@@ -21,7 +21,7 @@
             
              <returns>   A TDest. </returns>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapList``2(System.Collections.Generic.List{``0},System.Boolean)">
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapList``2(System.Collections.Generic.List{``0},System.Boolean,System.Boolean)">
              <summary>   A TSource extension method that maps the given source. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
@@ -29,7 +29,8 @@
              <typeparam name="TSource">  Type of the source. </typeparam>
              <typeparam name="TDest">    Type of the destination. </typeparam>
              <param name="sourceList">   The source List. </param>
-             <param name="notUseCache"></param>
+             <param name="notUseCache">if it is true Properties will be found by objects, else found by cache.</param>
+             <param name="useOnlySimpleTypes">if it is true uses only simple types, else includes complex types(for example class).</param>
             
              <returns>   A TDest. </returns>
         </member>
@@ -45,7 +46,7 @@
             
              <returns>   A TDest. </returns>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleMapper.Map``2(System.Collections.Generic.List{``0},System.String)">
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapList``2(System.Collections.Generic.List{``0},System.String)">
              <summary>   A TSource extension method that maps the given source. </summary>
             
              <remarks>   Msacli, 22.04.2019. </remarks>
@@ -57,7 +58,7 @@
             
              <returns>   A TDest. </returns>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapTo``2(``0,``1,System.Boolean)">
+        <member name="M:SimpleInfra.Mapping.SimpleMapper.MapTo``2(``0,``1,System.Boolean,System.Boolean)">
             <summary>
             Map Property Values to another type instance.
             </summary>
@@ -65,23 +66,33 @@
             <typeparam name="TDest">Destination Generic Type</typeparam>
             <param name="source">Source generic type instance</param>
             <param name="instance">Destination generic type instance</param>
-            <param name="notUseCache"></param>
+            <param name="notUseCache">if it is true Properties will be found by objects, else found by cache.</param>
+            <param name="useOnlySimpleTypes">if it is true uses only simple types, else includes complex types(for example class).</param>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSamePropertiesFromDict(System.Type,System.Type)">
+        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSamePropertiesFromDict(System.Type,System.Type,System.Boolean)">
             <summary>
             Gets common Properties of two types.
             </summary>
             <param name="type1">First type</param>
             <param name="type2">Second type</param>
+            <param name="useOnlySimpleTypes">if it is true uses only simple types, else includes complex types(for example class).</param>
             <returns>returns string list</returns>
         </member>
-        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSameProperties(System.Type,System.Type)">
+        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.GetSameProperties(System.Type,System.Type,System.Boolean)">
             <summary>
             Gets common Properties of two types.
             </summary>
             <param name="type1">First type</param>
             <param name="type2">Second type</param>
+            <param name="useOnlySimpleTypes">if it is true uses only simple types, else includes complex types(for example class).</param>
             <returns>returns string list</returns>
+        </member>
+        <member name="M:SimpleInfra.Mapping.SimpleTypeHelper.IsSimpleTypeV2(System.Type)">
+            <summary>
+            checks type is SimpleType.
+            </summary>
+            <param name="type">The type to act on.</param>
+            <returns>True if it succeeds, false if it fails.</returns>
         </member>
     </members>
 </doc>

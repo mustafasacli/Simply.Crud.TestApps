@@ -101,6 +101,13 @@
         { get; set; }
 
         /// <summary>
+        /// Gets or sets the user type name.
+        /// </summary>
+        [NotMapped]
+        public string UserTypeName
+        { get; set; }
+
+        /// <summary>
         /// Gets or sets the LogEntries.
         /// </summary>
         public virtual ICollection<LogEntry> LogEntries

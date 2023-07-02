@@ -1,12 +1,13 @@
+using BookmarksStocker.DAO;
 using BookmarksStocker.Source.Business.Interfaces;
 using BookmarksStocker.Source.Entity;
 using BookmarksStocker.Source.ViewModel;
+using SimpleInfra.Common.Response;
+using SimpleInfra.Validation;
 using Simply.Common;
 using Simply.Crud;
 using Simply.Crud.Constants;
-using Simply.Data;
-using SimpleInfra.Common.Response;
-using SimpleInfra.Validation;
+using Simply.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace BookmarksStocker.Source.Business
         /// <summary>
         /// The Creates entity for BookmarksViewModel.
         /// </summary>
-        /// <param name="viewModel">The viewModel <see cref="BookmarksViewModel"/>.</param>
+        /// <param name="model">The viewModel <see cref="BookmarksViewModel"/>.</param>
         /// <returns>The <see cref="SimpleResponse{BookmarksViewModel}"/>.</returns>
         public SimpleResponse<BookmarksViewModel> Create(BookmarksViewModel model)
         {
@@ -47,13 +48,13 @@ namespace BookmarksStocker.Source.Business
                     };
                 }
 
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
                         DbCrudSettings.LogQuery = true;
                         var entity = Map<BookmarksViewModel, Bookmarks>(model);
-                        context.OpenIfNot();
+
                         var returnValue = context.InsertAndGetId(entity);
                         model.Id = returnValue.ToLong();
                         return new SimpleResponse<BookmarksViewModel>
@@ -64,7 +65,7 @@ namespace BookmarksStocker.Source.Business
                         };
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -87,16 +88,13 @@ namespace BookmarksStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
                         DbCrudSettings.LogQuery = true;
-                        context.OpenIfNot();
                         var entity = context.FirstOrDefault<Bookmarks>(q => q.Id == id);
-                        // context.CloseIfNot();
-
-                        if (entity == null || entity == default(Bookmarks))
+                        if (entity == null)
                         {
                             response.ResponseCode = BusinessResponseValues.NullEntityValue;
                             response.ResponseMessage = "Kayýt bulunamadý.";
@@ -107,7 +105,7 @@ namespace BookmarksStocker.Source.Business
                         response.ResponseCode = 1;
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -123,7 +121,7 @@ namespace BookmarksStocker.Source.Business
         /// <summary>
         /// Updates entity for BookmarksViewModel.
         /// </summary>
-        /// <param name="viewModel">The viewModel <see cref="BookmarksViewModel"/>.</param>
+        /// <param name="model">The viewModel <see cref="BookmarksViewModel"/>.</param>
         /// <returns>The <see cref="SimpleResponse"/>.</returns>
         public SimpleResponse Update(BookmarksViewModel model)
         {
@@ -141,13 +139,12 @@ namespace BookmarksStocker.Source.Business
                     };
                 }
 
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
-                        context.OpenIfNot();
                         var entity = context.Select<Bookmarks>(q => q.Id == model.Id).FirstOrDefault();
-                        if (entity == null || entity == default(Bookmarks))
+                        if (entity == null)
                         {
                             response.ResponseCode = BusinessResponseValues.NullEntityValue;
                             response.ResponseMessage = "Kayýt bulunamadý.";
@@ -156,14 +153,10 @@ namespace BookmarksStocker.Source.Business
 
                         MapTo(model, entity);
                         entity.UpdateTime = DateTime.Now;
-                        // context.Bookmarks.Attach(entity);
-                        // context.Entry(entity).State = EntityState.Modified;
-
                         response.ResponseCode = context.Update(entity);
-                        // context.CloseIfNot();
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -179,7 +172,7 @@ namespace BookmarksStocker.Source.Business
         /// <summary>
         /// Deletes entity for BookmarksViewModel.
         /// </summary>
-        /// <param name="viewModel">The viewModel <see cref="BookmarksViewModel"/>.</param>
+        /// <param name="model">The viewModel <see cref="BookmarksViewModel"/>.</param>
         /// <returns>The <see cref="SimpleResponse"/>.</returns>
         public SimpleResponse Delete(BookmarksViewModel model)
         {
@@ -187,16 +180,14 @@ namespace BookmarksStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
-                        context.OpenIfNot();
-                        response.ResponseCode = context.DeleteByIdList<Bookmarks>(idValues: new object[] { model.Id });
-                        // context.CloseIfNot();
+                        response.ResponseCode = context.DeleteAll<Bookmarks>(q => q.Id == model.Id);
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -219,17 +210,14 @@ namespace BookmarksStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
-                        //context.OpenIfNot();
-                        response.ResponseCode = context.OpenAnd()
-                            .DeleteByIdList<Bookmarks>(idValues: new object[] { id });
-                        // context.CloseIfNot();
+                        response.ResponseCode = context.DeleteAll<Bookmarks>(q => q.Id == id);
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
             }
             catch (Exception ex)
@@ -252,18 +240,17 @@ namespace BookmarksStocker.Source.Business
 
             try
             {
-                using (var context = GetDbConnection())
+                using (ISimpleDatabase context = new SimpleBookmarkDatabase())
                 {
                     try
                     {
                         DbCrudSettings.LogQuery = true;
-                        context.OpenIfNot();
+
                         var entities = context.GetAll<Bookmarks>();
-                        // context.CloseIfNot();
                         response.Data = MapList<Bookmarks, BookmarksViewModel>(entities);
                     }
                     finally
-                    { context.CloseIfNot(); }
+                    { context.Close(); }
                 }
 
                 response.ResponseCode = response.Data?.Count ?? 0;
@@ -279,6 +266,11 @@ namespace BookmarksStocker.Source.Business
             return response;
         }
 
+        /// <summary>
+        /// Exists the by name.
+        /// </summary>
+        /// <param name="viewModel">The view model.</param>
+        /// <returns>A bool.</returns>
         public bool ExistByName(BookmarksViewModel viewModel)
         {
             bool result = false;
@@ -286,16 +278,19 @@ namespace BookmarksStocker.Source.Business
             if (viewModel == null)
                 return result;
 
-            using (var context = GetDbConnection())
+            using (ISimpleDatabase context = new SimpleBookmarkDatabase())
             {
-                context.OpenIfNot();
                 result = context.Any<Bookmarks>(q => q.Name == viewModel.Name && q.Id != viewModel.Id);
-                context.CloseIfNot();
             }
 
             return result;
         }
 
+        /// <summary>
+        /// Exists the by url.
+        /// </summary>
+        /// <param name="viewModel">The view model.</param>
+        /// <returns>A bool.</returns>
         public bool ExistByUrl(BookmarksViewModel viewModel)
         {
             bool result = false;
@@ -303,11 +298,9 @@ namespace BookmarksStocker.Source.Business
             if (viewModel == null)
                 return result;
 
-            using (var context = GetDbConnection())
+            using (ISimpleDatabase context = new SimpleBookmarkDatabase())
             {
-                // context.OpenIfNot();
                 result = context.Any<Bookmarks>(q => q.Url == viewModel.Url && q.Id != viewModel.Id);
-                context.CloseIfNot();
             }
 
             return result;

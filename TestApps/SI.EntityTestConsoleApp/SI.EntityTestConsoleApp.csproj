@@ -70,6 +70,10 @@
       <Project>{f374850b-07d2-4e3c-a3ec-bff273dee3c7}</Project>
       <Name>Simply.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Databases\SimplyCrud_TestDb_MySql\SimplyCrud_TestDb_MySql.csproj">
+      <Project>{D344ADA8-60BE-4416-BBBD-6BB54E6690C1}</Project>
+      <Name>SimplyCrud_TestDb_MySql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SI.Test.Entities\SI.Test.Entities.csproj">
       <Project>{2aecfd86-1106-493c-92f4-55d63bd3c6be}</Project>
       <Name>SI.Test.Entities</Name>

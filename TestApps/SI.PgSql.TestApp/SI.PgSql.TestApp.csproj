@@ -36,8 +36,17 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=4.1.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Npgsql.4.1.4\lib\net461\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Npgsql.4.0.0\lib\net451\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Simply.Common, Version=1.8.0.0, Culture=neutral, PublicKeyToken=c03dc30a9850669f, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Simply.Common.1.8.0\lib\net451\Simply.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Simply.Crud, Version=1.2.0.0, Culture=neutral, PublicKeyToken=8752aac447e1f96a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Simply.Crud.1.2.0\lib\net451\Simply.Crud.dll</HintPath>
+    </Reference>
+    <Reference Include="Simply.Data, Version=4.3.0.0, Culture=neutral, PublicKeyToken=0d4e0a4d073b85f2, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Simply.Data.4.3.0\lib\net451\Simply.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -55,6 +64,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -83,17 +93,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Simply.Crud\Simply.Crud.Soln\Crud\Simply.Crud\Simply.Crud.csproj">
-      <Project>{d8981a88-0e0c-4298-ad61-0a5775ed50a9}</Project>
-      <Name>Simply.Crud</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Common\Simply.Common.csproj">
-      <Project>{a81ff695-21ac-48c0-aa35-ba906168b95d}</Project>
-      <Name>Simply.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Data\Simply.Data.csproj">
-      <Project>{f374850b-07d2-4e3c-a3ec-bff273dee3c7}</Project>
-      <Name>Simply.Data</Name>
+    <ProjectReference Include="..\..\Databases\SimplyCrud_TestDb_PostgreSql\SimplyCrud_TestDb_PostgreSql.csproj">
+      <Project>{E4A65C55-CFCD-49AE-A728-8662AF06BB4F}</Project>
+      <Name>SimplyCrud_TestDb_PostgreSql</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

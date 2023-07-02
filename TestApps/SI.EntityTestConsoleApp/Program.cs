@@ -1,13 +1,15 @@
 ﻿using Mst.Dexter.Factory;
 using SI.Test.Entities;
 using Simply.Crud;
+using Simply.Data;
+using Simply.Data.Database;
+using Simply.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
-using Simply.Data;
 
 namespace SI.EntityTestConsoleApp
 {
@@ -29,6 +31,7 @@ namespace SI.EntityTestConsoleApp
             var connectionStringName = ConfigurationManager.AppSettings["connStringName"];
             IDbConnection sqlConn = DxConnectionFactory.Instance.GetConnection(connectionName);
             sqlConn.ConnectionString = ConfigurationManager.AppSettings[connectionStringName];
+            ISimpleDatabase database = new SimpleDatabase(sqlConn);
 
             string sCrudMode = ConfigurationManager.AppSettings["crudMode"];
             int iCrudMode;
@@ -104,7 +107,7 @@ namespace SI.EntityTestConsoleApp
 
                         Console.WriteLine("Entity bulk insert started.");
                         sw.Start();
-                        var executionResult = sqlConn.InsertAndGetIdInternal(files);
+                        var executionResult = database.InsertAndGetId(files);
                         var objs = executionResult.ExecutionResult;
                         sw.Stop();
                     }/// update
@@ -126,7 +129,7 @@ namespace SI.EntityTestConsoleApp
                         }
 
                         sw.Start();
-                        result = sqlConn.UpdateInternal(files);
+                        result = database.Update(files);// sqlConn.UpdateInternal(files);
                         sw.Stop();
                     }//delete
                     else if (iCrudMode == 3)
@@ -137,7 +140,7 @@ namespace SI.EntityTestConsoleApp
                         }
 
                         sw.Start();
-                        result = sqlConn.DeleteInternal(files);
+                        result = database.Delete(files); // sqlConn.DeleteInternal(files);
                         sw.Stop();
                     }
                     Console.WriteLine($"Geçen Süre : {sw.ElapsedMilliseconds} ms");
@@ -170,7 +173,8 @@ namespace SI.EntityTestConsoleApp
                 }
                 finally
                 {
-                    sqlConn.CloseIfNot();
+                    database.Close();
+                    //sqlConn.CloseIfNot();
                 }
 
                 #endregion [ Bulk Crud ]
@@ -190,7 +194,7 @@ namespace SI.EntityTestConsoleApp
                         {
                             personFile.CreationDate = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-ffffff");
                             sw.Start();
-                            o = sqlConn.InsertAndGetIdInternal(personFile);
+                            o = database.InsertAndGetId(personFile); // sqlConn.InsertAndGetIdInternal(personFile);
                             sw.Stop();
                         }//update
                         else if (iCrudMode == 2)
@@ -202,14 +206,14 @@ namespace SI.EntityTestConsoleApp
                                         new byte[] { 89, 19, 12, 34, 56, 78, 74, 35, 10, 45, 67, 13, 90, 123, 49, 58 };
 
                             sw.Start();
-                            o = sqlConn.UpdateInternal(personFile);
+                            o = database.Update(personFile); // sqlConn.UpdateInternal(personFile);
                             sw.Stop();
                         }//delete
                         else if (iCrudMode == 3)
                         {
                             personFile.Id = (long)(entityId + counter);
                             sw.Start();
-                            o = sqlConn.DeleteInternal(personFile);
+                            o = database.Delete(personFile); // sqlConn.DeleteInternal(personFile);
                             sw.Stop();
                         }
                         else
@@ -259,8 +263,9 @@ namespace SI.EntityTestConsoleApp
                     }
                     finally
                     {
-                        if (sqlConn.State != ConnectionState.Closed)
-                            sqlConn.Close();
+                        //if (sqlConn.State != ConnectionState.Closed)
+                        //    sqlConn.Close();
+                        database.Close();
                     }
                     System.Threading.Thread.Sleep(100);
                 }
@@ -296,9 +301,9 @@ namespace SI.EntityTestConsoleApp
                 List<PersonalFile> files = new List<PersonalFile>();
 
                 Stopwatch swh = new Stopwatch();
-                sqlConn.OpenIfNot();
+                // sqlConn.OpenIfNot();
                 swh.Start();
-                files = sqlConn.GetAll<PersonalFile>();
+                files = database.GetAll<PersonalFile>(); // sqlConn.GetAll<PersonalFile>();
 
                 swh.Stop();
                 Console.WriteLine("-------------------------------------------------");
