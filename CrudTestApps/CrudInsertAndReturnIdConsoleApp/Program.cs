@@ -11,32 +11,29 @@ using System.Collections;
 using SimplyCrud.Project.Entites;
 using SimplyCrud.Project.Entity;
 using Simply.Crud;
+using Simply.Data.Interfaces;
+using Simply.Data.Database;
 
 namespace CrudInsertAndReturnIdConsoleApp
 {
     internal class Program
     {
         private static readonly EntityBuilder entityBuilder = new EntityBuilder();
-        internal static IDbConnection GetDbConnection()
-        {
-            return new MySqlConnection { ConnectionString = "data source=127.0.0.1;initial catalog=crud_test_db;user id=root;" };
-        }
+        private static readonly string connectionString = "data source=127.0.0.1;initial catalog=crud_test_db;user id=root;";
+
         static void Main(string[] args)
         {
             Person person = entityBuilder.CreatePersonObject();
             object result;
-            using (IDbConnection connection = GetDbConnection())
+            using (ISimpleDatabase database = new SimpleDatabase(
+                SimpleDatabase.Create<MySqlConnection>(connectionString)))
             {
-                try
-                {
-                    result = connection.OpenAnd()
-                       .InsertAndGetId(person);
-                }
-                finally
-                { connection.CloseIfNot(); }
+                var objResult = database.InsertAndGetId(person);
+                result = objResult.Result;
             }
+
             Console.WriteLine(result?.ToString() ?? "#null#");
-            Console.Read();
+            Console.ReadKey();
         }
     }
 }
