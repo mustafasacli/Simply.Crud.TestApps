@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Simply.Crud\Simply.Crud.Soln\Crud\Simply.Crud\Simply.Crud.csproj">
+      <Project>{d8981a88-0e0c-4298-ad61-0a5775ed50a9}</Project>
+      <Name>Simply.Crud</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Common\Simply.Common.csproj">
+      <Project>{A81FF695-21AC-48C0-AA35-BA906168B95D}</Project>
+      <Name>Simply.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Simply\Simply.Soln\Simply\Simply.Data\Simply.Data.csproj">
+      <Project>{F374850B-07D2-4E3C-A3EC-BFF273DEE3C7}</Project>
+      <Name>Simply.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entity\SimplyCrud.Project.Entites\SimplyCrud.Project.Entites.csproj">
+      <Project>{DB31F005-317B-4382-AEB6-0AD9CA927B9C}</Project>
+      <Name>SimplyCrud.Project.Entites</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
