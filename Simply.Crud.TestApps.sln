@@ -114,6 +114,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplyCrud_TestDb_SQLite", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SI.SQLite.TestApp", "TestApps\SI.SQLite.TestApp\SI.SQLite.TestApp.csproj", "{401DE2E9-7C78-4A5B-9AAD-BBFDC52FAF67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SubWhereTestApp", "TestApps\SubWhereTestApp\SubWhereTestApp.csproj", "{33BD0582-675D-4F79-962C-6BE04C62FE5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -292,6 +294,10 @@ Global
 		{401DE2E9-7C78-4A5B-9AAD-BBFDC52FAF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{401DE2E9-7C78-4A5B-9AAD-BBFDC52FAF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{401DE2E9-7C78-4A5B-9AAD-BBFDC52FAF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BD0582-675D-4F79-962C-6BE04C62FE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BD0582-675D-4F79-962C-6BE04C62FE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BD0582-675D-4F79-962C-6BE04C62FE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BD0582-675D-4F79-962C-6BE04C62FE5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -338,6 +344,7 @@ Global
 		{E4A65C55-CFCD-49AE-A728-8662AF06BB4F} = {D5F5D405-386F-4B6B-984D-CE207221EA89}
 		{824B23CC-67A0-402B-A1A7-7CC72D23E725} = {D5F5D405-386F-4B6B-984D-CE207221EA89}
 		{401DE2E9-7C78-4A5B-9AAD-BBFDC52FAF67} = {DF98C51B-2381-4870-B9D9-22CE5C7D590D}
+		{33BD0582-675D-4F79-962C-6BE04C62FE5E} = {DF98C51B-2381-4870-B9D9-22CE5C7D590D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2133F4DE-060E-4478-BD6F-7626ED3D1888}

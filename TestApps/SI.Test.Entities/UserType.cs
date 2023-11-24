@@ -40,7 +40,7 @@
         /// Gets or sets a value indicating whether IsActive.
         /// </summary>
         [Column("is_active")]
-        public bool IsActive
+        public byte IsActive
         { get; set; }
 
         /// <summary>
