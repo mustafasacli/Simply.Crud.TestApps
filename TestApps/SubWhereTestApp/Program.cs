@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Simply.Crud.Objects;
+using System.Reflection;
+using Simply.Data.Interfaces;
 
 namespace SubWhereTestApp
 {
@@ -30,6 +32,15 @@ namespace SubWhereTestApp
 
             var cmd = whereClause.GetCommand();
             Console.WriteLine(cmd.CommandText);
+
+            var field = whereClause.GetType()
+                .GetFields(BindingFlags.NonPublic |
+                         BindingFlags.Instance)
+                .Where(f => f.FieldType == typeof(ISimpleDatabase) || (f.FieldType.GetInterfaces()?.Contains(typeof(ISimpleDatabase)) ?? false))
+                .FirstOrDefault();
+
+            ISimpleDatabase db = field.GetValue(whereClause) as ISimpleDatabase;
+            Console.WriteLine(db.ToString());
             Console.ReadKey();
         }
     }
